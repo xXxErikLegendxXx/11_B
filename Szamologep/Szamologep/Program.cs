@@ -13,45 +13,29 @@ double b = Convert.ToDouble(Console.ReadLine());
 
 if (muvelet == '+')
 {
-
     Console.WriteLine($"Az művelet eredménye: {a+b}");
-
-
 }
 else if (muvelet == '-')
 {
-
     Console.WriteLine($"A művelet eredménye: {a - b }");
-
-
 }
 else if (muvelet == '*')
 {
-
     Console.WriteLine($"A művelet eredménye: { a* b}");
-
-
 }
 
-if (muvelet == '/' && a != 0 && b!=0 )
+if (muvelet == '/' && b!=0 )
 {
-
     Console.WriteLine($"A művelet eredménye:  {a / b}");
-
-
 }
-else if (muvelet == '/' && a == 0  || b == 0) 
+else if (muvelet == '/' &&  b == 0) 
 {
-
     Console.WriteLine("Nullával nem osztunk");
-
 }
 
 else
 {
-
     Console.WriteLine("Nem értem");
-
 }
 
 
