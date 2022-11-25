@@ -1,19 +1,19 @@
-﻿Console.Write("Adj meg egy számot : ");
+﻿Console.Write("Adj meg Egy számot : ");
 
 double a = Convert.ToDouble(Console.ReadLine());
 
-Console.Write("Milyen műveletet szeretnél elvégezni? (+, -, *, /): ");
+Console.Write("Milyen műveletet szeRetnél elvégezni? (+, -, *, /): ");
 
 char muvelet = Convert.ToChar(Console.ReadLine());
 
-Console.Write("Adj meg egy másik számot: ");
+Console.Write("Adj meg egy másIK számot: ");
 
 double b = Convert.ToDouble(Console.ReadLine());
 
 
 if (muvelet == '+')
 {
-    Console.WriteLine($"Az művelet eredménye: {a+b}");
+    Console.WriteLine($"A művelet eredménye: {a+b}");
 }
 else if (muvelet == '-')
 {
