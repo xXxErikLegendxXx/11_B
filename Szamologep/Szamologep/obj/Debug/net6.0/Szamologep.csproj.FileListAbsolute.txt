@@ -1,0 +1,15 @@
+D:\Kis Erik\11_b_git\Szamologep\Szamologep\bin\Debug\net6.0\Szamologep.exe
+D:\Kis Erik\11_b_git\Szamologep\Szamologep\bin\Debug\net6.0\Szamologep.deps.json
+D:\Kis Erik\11_b_git\Szamologep\Szamologep\bin\Debug\net6.0\Szamologep.runtimeconfig.json
+D:\Kis Erik\11_b_git\Szamologep\Szamologep\bin\Debug\net6.0\Szamologep.dll
+D:\Kis Erik\11_b_git\Szamologep\Szamologep\bin\Debug\net6.0\Szamologep.pdb
+D:\Kis Erik\11_b_git\Szamologep\Szamologep\obj\Debug\net6.0\Szamologep.csproj.AssemblyReference.cache
+D:\Kis Erik\11_b_git\Szamologep\Szamologep\obj\Debug\net6.0\Szamologep.GeneratedMSBuildEditorConfig.editorconfig
+D:\Kis Erik\11_b_git\Szamologep\Szamologep\obj\Debug\net6.0\Szamologep.AssemblyInfoInputs.cache
+D:\Kis Erik\11_b_git\Szamologep\Szamologep\obj\Debug\net6.0\Szamologep.AssemblyInfo.cs
+D:\Kis Erik\11_b_git\Szamologep\Szamologep\obj\Debug\net6.0\Szamologep.csproj.CoreCompileInputs.cache
+D:\Kis Erik\11_b_git\Szamologep\Szamologep\obj\Debug\net6.0\Szamologep.dll
+D:\Kis Erik\11_b_git\Szamologep\Szamologep\obj\Debug\net6.0\refint\Szamologep.dll
+D:\Kis Erik\11_b_git\Szamologep\Szamologep\obj\Debug\net6.0\Szamologep.pdb
+D:\Kis Erik\11_b_git\Szamologep\Szamologep\obj\Debug\net6.0\Szamologep.genruntimeconfig.cache
+D:\Kis Erik\11_b_git\Szamologep\Szamologep\obj\Debug\net6.0\ref\Szamologep.dll
