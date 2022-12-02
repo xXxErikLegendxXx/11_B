@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Szamologep",
+    "\\Szamologep\\Szamologep"
   ],
-  "SelectedNode": "\\Szamologep.sln",
+  "SelectedNode": "\\Szamologep\\Szamologep\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
