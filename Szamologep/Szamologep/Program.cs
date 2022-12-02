@@ -6,8 +6,7 @@ Console.Write("Milyen műveletet szeRetnél elvégezni? (+, -, *, /): ");
 
 char muvelet = Convert.ToChar(Console.ReadLine());
 
-Console.Write("Adj meg egy más" +
-    ": ");
+Console.Write("Adj meg egy más: ");
 
 double b = Convert.ToDouble(Console.ReadLine());
 
