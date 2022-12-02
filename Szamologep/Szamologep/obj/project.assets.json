@@ -8,27 +8,26 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\kis.erik.roland\\.nuget\\packages\\": {}
+    "C:\\Users\\kiser\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Kis Erik\\11_b_git\\Szamologep\\Szamologep\\Szamologep.csproj",
+      "projectUniqueName": "C:\\Users\\kiser\\Source\\Repos\\11_B\\Szamologep\\Szamologep\\Szamologep.csproj",
       "projectName": "Szamologep",
-      "projectPath": "D:\\Kis Erik\\11_b_git\\Szamologep\\Szamologep\\Szamologep.csproj",
-      "packagesPath": "C:\\Users\\kis.erik.roland\\.nuget\\packages\\",
-      "outputPath": "D:\\Kis Erik\\11_b_git\\Szamologep\\Szamologep\\obj\\",
+      "projectPath": "C:\\Users\\kiser\\Source\\Repos\\11_B\\Szamologep\\Szamologep\\Szamologep.csproj",
+      "packagesPath": "C:\\Users\\kiser\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\kiser\\Source\\Repos\\11_B\\Szamologep\\Szamologep\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\kis.erik.roland\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\kiser\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {}
       },
       "frameworks": {
         "net6.0": {
@@ -61,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }
