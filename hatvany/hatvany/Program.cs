@@ -75,7 +75,6 @@
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
                 Console.SetCursorPosition(midR, curTop);
                 Console.Write(Math.Pow(2, e));
-                Console.WriteLine("Szia");
             }
             Console.ResetColor();
 
