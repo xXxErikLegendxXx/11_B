@@ -13,23 +13,19 @@
             Console.SetCursorPosition(kozep_x, kozep_y);
             Console.Write(iksz);
 
-            /*while (x != kozep_x * 2 && yF != kozep_y * 2)
+            while (x != kozep_x * 2 && yF != kozep_y * 2)
             {
                 Console.SetCursorPosition(x, yF);
                 Console.Write(iksz);
-
-                x += 4;
-                yF++;
-            }*/
-
-            while (x != kozep_x * 2 && yL != yF)
-            {
                 Console.SetCursorPosition(x, yL);
                 Console.Write(iksz);
 
                 x += 4;
+                yF++;
                 yL--;
             }
+
+            Console.ReadLine();
 
 
         }
