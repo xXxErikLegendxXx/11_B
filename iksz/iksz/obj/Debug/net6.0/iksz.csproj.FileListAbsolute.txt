@@ -1,0 +1,15 @@
+C:\Users\kiser\source\repos\Erikm0\11_B\iksz\iksz\bin\Debug\net6.0\iksz.exe
+C:\Users\kiser\source\repos\Erikm0\11_B\iksz\iksz\bin\Debug\net6.0\iksz.deps.json
+C:\Users\kiser\source\repos\Erikm0\11_B\iksz\iksz\bin\Debug\net6.0\iksz.runtimeconfig.json
+C:\Users\kiser\source\repos\Erikm0\11_B\iksz\iksz\bin\Debug\net6.0\iksz.dll
+C:\Users\kiser\source\repos\Erikm0\11_B\iksz\iksz\bin\Debug\net6.0\iksz.pdb
+C:\Users\kiser\source\repos\Erikm0\11_B\iksz\iksz\obj\Debug\net6.0\iksz.csproj.AssemblyReference.cache
+C:\Users\kiser\source\repos\Erikm0\11_B\iksz\iksz\obj\Debug\net6.0\iksz.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kiser\source\repos\Erikm0\11_B\iksz\iksz\obj\Debug\net6.0\iksz.AssemblyInfoInputs.cache
+C:\Users\kiser\source\repos\Erikm0\11_B\iksz\iksz\obj\Debug\net6.0\iksz.AssemblyInfo.cs
+C:\Users\kiser\source\repos\Erikm0\11_B\iksz\iksz\obj\Debug\net6.0\iksz.csproj.CoreCompileInputs.cache
+C:\Users\kiser\source\repos\Erikm0\11_B\iksz\iksz\obj\Debug\net6.0\iksz.dll
+C:\Users\kiser\source\repos\Erikm0\11_B\iksz\iksz\obj\Debug\net6.0\refint\iksz.dll
+C:\Users\kiser\source\repos\Erikm0\11_B\iksz\iksz\obj\Debug\net6.0\iksz.pdb
+C:\Users\kiser\source\repos\Erikm0\11_B\iksz\iksz\obj\Debug\net6.0\iksz.genruntimeconfig.cache
+C:\Users\kiser\source\repos\Erikm0\11_B\iksz\iksz\obj\Debug\net6.0\ref\iksz.dll
