@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kiser\\Source\\Repos\\Erikm0\\11_B\\Szamologep\\Szamologep\\Szamologep.csproj": {}
+    "C:\\Users\\kiser\\source\\repos\\Erikm0\\11_B\\gyakorlas_git\\gyakorlas_git\\gyakorlas_git.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kiser\\Source\\Repos\\Erikm0\\11_B\\Szamologep\\Szamologep\\Szamologep.csproj": {
+    "C:\\Users\\kiser\\source\\repos\\Erikm0\\11_B\\gyakorlas_git\\gyakorlas_git\\gyakorlas_git.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kiser\\Source\\Repos\\Erikm0\\11_B\\Szamologep\\Szamologep\\Szamologep.csproj",
-        "projectName": "Szamologep",
-        "projectPath": "C:\\Users\\kiser\\Source\\Repos\\Erikm0\\11_B\\Szamologep\\Szamologep\\Szamologep.csproj",
+        "projectUniqueName": "C:\\Users\\kiser\\source\\repos\\Erikm0\\11_B\\gyakorlas_git\\gyakorlas_git\\gyakorlas_git.csproj",
+        "projectName": "gyakorlas_git",
+        "projectPath": "C:\\Users\\kiser\\source\\repos\\Erikm0\\11_B\\gyakorlas_git\\gyakorlas_git\\gyakorlas_git.csproj",
         "packagesPath": "C:\\Users\\kiser\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kiser\\Source\\Repos\\Erikm0\\11_B\\Szamologep\\Szamologep\\obj\\",
+        "outputPath": "C:\\Users\\kiser\\source\\repos\\Erikm0\\11_B\\gyakorlas_git\\gyakorlas_git\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kiser\\AppData\\Roaming\\NuGet\\NuGet.Config",
