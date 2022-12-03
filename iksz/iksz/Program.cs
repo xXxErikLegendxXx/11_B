@@ -6,20 +6,31 @@
         {
             char iksz = 'x';
             int x = 0;
-            int y = 0;
+            int yF = 0;
+            int yL = Console.WindowHeight;
             int kozep_x = Console.WindowWidth / 2;
             int kozep_y = Console.WindowHeight / 2;
             Console.SetCursorPosition(kozep_x, kozep_y);
-            Console.WriteLine(iksz);
+            Console.Write(iksz);
 
-            while (x != kozep_x * 2 && y != kozep_y * 2)
+            /*while (x != kozep_x * 2 && yF != kozep_y * 2)
             {
-                Console.SetCursorPosition(x, y);
-                Console.WriteLine(iksz);
+                Console.SetCursorPosition(x, yF);
+                Console.Write(iksz);
 
-                x+= 4;
-                y++;
+                x += 4;
+                yF++;
+            }*/
+
+            while (x != kozep_x * 2 && yL != yF)
+            {
+                Console.SetCursorPosition(x, yL);
+                Console.Write(iksz);
+
+                x += 4;
+                yL--;
             }
+
 
         }
     }
