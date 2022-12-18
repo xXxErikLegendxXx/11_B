@@ -1,0 +1,15 @@
+C:\Users\kiser\source\repos\Erikm0\11_B\jatek\jatek\bin\Debug\net6.0\jatek.exe
+C:\Users\kiser\source\repos\Erikm0\11_B\jatek\jatek\bin\Debug\net6.0\jatek.deps.json
+C:\Users\kiser\source\repos\Erikm0\11_B\jatek\jatek\bin\Debug\net6.0\jatek.runtimeconfig.json
+C:\Users\kiser\source\repos\Erikm0\11_B\jatek\jatek\bin\Debug\net6.0\jatek.dll
+C:\Users\kiser\source\repos\Erikm0\11_B\jatek\jatek\bin\Debug\net6.0\jatek.pdb
+C:\Users\kiser\source\repos\Erikm0\11_B\jatek\jatek\obj\Debug\net6.0\jatek.csproj.AssemblyReference.cache
+C:\Users\kiser\source\repos\Erikm0\11_B\jatek\jatek\obj\Debug\net6.0\jatek.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kiser\source\repos\Erikm0\11_B\jatek\jatek\obj\Debug\net6.0\jatek.AssemblyInfoInputs.cache
+C:\Users\kiser\source\repos\Erikm0\11_B\jatek\jatek\obj\Debug\net6.0\jatek.AssemblyInfo.cs
+C:\Users\kiser\source\repos\Erikm0\11_B\jatek\jatek\obj\Debug\net6.0\jatek.csproj.CoreCompileInputs.cache
+C:\Users\kiser\source\repos\Erikm0\11_B\jatek\jatek\obj\Debug\net6.0\jatek.dll
+C:\Users\kiser\source\repos\Erikm0\11_B\jatek\jatek\obj\Debug\net6.0\refint\jatek.dll
+C:\Users\kiser\source\repos\Erikm0\11_B\jatek\jatek\obj\Debug\net6.0\jatek.pdb
+C:\Users\kiser\source\repos\Erikm0\11_B\jatek\jatek\obj\Debug\net6.0\jatek.genruntimeconfig.cache
+C:\Users\kiser\source\repos\Erikm0\11_B\jatek\jatek\obj\Debug\net6.0\ref\jatek.dll
