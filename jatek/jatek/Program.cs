@@ -22,84 +22,222 @@ namespace jatek
 
             Console.Clear();
 
-            int ero = 0;
-            int gyorsasag = 0;
-            int szerencse = 0;
-            int karizma = 0;
-            int inteligencia = 0;
-
             int pontszam = 10;
+            int e = 0;
+            int gy = 0;
+            int i = 0;
+            int k = 0;
+            int se = 0;
 
-            Console.WriteLine($"Erő = {ero}");
+            Console.WriteLine($"Erő = {e}");
             Thread.Sleep(500);
-            Console.WriteLine($"Gyorsaság = {gyorsasag}");
+            Console.WriteLine($"Gyorsaság = {gy}");
             Thread.Sleep(500);
-            Console.WriteLine($"Szerencse = {szerencse}");
+            Console.WriteLine($"Inteligencia = {i}");
             Thread.Sleep(500);
-            Console.WriteLine($"Karizma = {karizma}");
+            Console.WriteLine($"Karizma = {k}");
             Thread.Sleep(500);
-            Console.WriteLine($"Inteligencia = {inteligencia}");
+            Console.WriteLine($"SzErencse = {se}");
             Thread.Sleep(500);
             Console.WriteLine();
             Thread.Sleep(500);
             Console.WriteLine($"{pontszam} pontot tudsz felhasználni.");
 
+            while (true)
+            {
+                Console.Write("Erő:");
 
-            Console.Write("Erő:");
-            ero = Convert.ToInt32(Console.ReadLine());
-            pontszam -= ero;
+                string ero_szam = Console.ReadLine();
 
-            if (ero < 0)
-                ero = 0;
+                if(int.TryParse(ero_szam,out int ero) && ero > 0 && ero <= 10)
+                {
+                    e = ero;
+                    pontszam -= ero;
+                    break;
+                }
+            }
 
-            Console.Write("Gyorsaság:");
-            gyorsasag = Convert.ToInt32(Console.ReadLine());
-            pontszam -= gyorsasag;
-            if(gyorsasag < 0)
-                gyorsasag = 0;
+            while (true)
+            {
+                Console.Write("Gyorsaság:");
 
-            Console.Write("Szerencse:");
-            szerencse = Convert.ToInt32(Console.ReadLine());
-            pontszam -= szerencse;
-            if (szerencse < 0)
-                szerencse = 0;
+                string gyorsasag_szam = Console.ReadLine();
 
-            Console.Write("Karizma:");
-            karizma = Convert.ToInt32(Console.ReadLine());
-            pontszam -= karizma;
-            if (karizma < 0)
-                karizma = 0;
+                if (int.TryParse(gyorsasag_szam, out int gyorsasag) && gyorsasag >= 0 && gyorsasag <= pontszam)
+                {
+                    gy = gyorsasag;
+                    pontszam -= gyorsasag;
+                    break;
+                }
+            }
 
-            Console.Write("Inteligencia:");
-            inteligencia = Convert.ToInt32(Console.ReadLine());
-            pontszam -= inteligencia;
-            if (inteligencia < 0)
-                inteligencia = 0;
+            while (true)
+            {
+                Console.Write("Inteligencia:");
 
+                string inteligencia_szam = Console.ReadLine();
 
-            int max_pontszam = ero + gyorsasag + szerencse + karizma + inteligencia;
+                if (int.TryParse(inteligencia_szam, out int inteligencia) && inteligencia >= 0 && inteligencia <= pontszam)
+                {
+                    i = inteligencia;
+                    pontszam -= inteligencia;
+                    break;
+                }
+            }
 
-            Console.WriteLine(max_pontszam);
+            while (true)
+            {
+                Console.Write("Karizma:");
+
+                string karizma_szam = Console.ReadLine();
+
+                if (int.TryParse(karizma_szam, out int karizma) && karizma >= 0 && karizma <= pontszam)
+                { 
+                    k = karizma;
+                    pontszam -= karizma;
+                    break;
+                }
+            }
+
+            while (true)
+            {
+                Console.Write("Szerencse:");
+
+                string szerencse_szam = Console.ReadLine();
+
+                if (int.TryParse(szerencse_szam, out int szerencse) && szerencse >= 0 && szerencse <= pontszam)
+                {
+                    se = szerencse;
+                    pontszam -= szerencse;
+                    break;
+                }
+            }
+
             Console.WriteLine(pontszam);
 
-            while (pontszam != 0)
+
+            //Marad még pontod
+            while (pontszam > 0)
             {
-                Console.WriteLine($"Hékás, még van {10 - max_pontszam}");
+                Console.WriteLine($"Narrátor: Nem tudom észrevetted-e,de még van {pontszam} pontod");
 
-                Console.WriteLine("Fel szeretnéd használni őket? (Igen/Nem):");
-                string felhasznal = Convert.ToString(Console.ReadLine()).ToLower();
+                Console.WriteLine("Narrátor: Fel szeretnéd használni őket? (Igen/Nem):");
+                string felhasznal = Console.ReadLine().ToLower();
 
+                while(felhasznal != "igen" && felhasznal !="nem")
+                {
+                    Console.WriteLine("Narrátor: Fel szeretnéd használni őket? (Igen/Nem):");
+                    felhasznal = Console.ReadLine().ToLower();
+                }
 
                 if (felhasznal == "nem")
                 {
                       break;
                 }
+                else if (felhasznal == "igen")
+                {
+                
+                    Console.WriteLine($"Erő = {e}");
+                    Thread.Sleep(500);
+                    Console.WriteLine($"Gyorsaság = {gy}");
+                    Thread.Sleep(500);
+                    Console.WriteLine($"Inteligencia = {i}");
+                    Thread.Sleep(500);
+                    Console.WriteLine($"Karizma = {k}");
+                    Thread.Sleep(500);
+                    Console.WriteLine($"SzErencse = {se}");
+                    Thread.Sleep(500);
+                    Console.WriteLine();
+                    Thread.Sleep(500);
 
+                    Console.WriteLine($"Narrátor: Maradék elkölthető pont:{pontszam}");
 
+                    Console.WriteLine("Narrátor: Válasz egy képességet amire felakarod használni a maradék pontodat(E /GY /I /K /SE)");
+
+                    string maradek_pont = Console.ReadLine().ToLower();
+
+                    if (maradek_pont == "e")
+                    {
+                        e += pontszam;
+                        pontszam = 0;
+                    }
+
+                    else if (maradek_pont == "gy")
+                    {
+                        gy += pontszam;
+                        pontszam = 0;
+                    }
+
+                    else if (maradek_pont == "i")
+                    {
+                        i += pontszam;
+                        pontszam = 0;
+                    }
+                    else if (maradek_pont == "k")
+                    {
+                        k += pontszam;
+                        pontszam = 0;
+                    }
+                    else if (maradek_pont == "se")
+                    {
+                        se += pontszam;
+                        pontszam = 0;
+                    }
+                    else if (maradek_pont == "egyikse")
+                    {
+                        pontszam = 0;
+                    }
+                    else
+                    {
+                        while (true)
+                        {
+                            Console.WriteLine("Narrátor: Válasz egy képességet amire felakarod használni a maradék pontodat(E /GY /I /K /SE)");
+
+                            maradek_pont = Console.ReadLine().ToLower();
+
+                            if (maradek_pont == "e")
+                            {
+                                e += pontszam;
+                                pontszam = 0;
+                                break;
+                            }
+                            else if (maradek_pont == "gy")
+                            {
+                                gy += pontszam;
+                                pontszam = 0;
+                                break;
+                            }
+                            else if (maradek_pont == "i")
+                            {
+                                i += pontszam;
+                                pontszam = 0;
+                                break;
+                            }
+                            else if (maradek_pont == "k")
+                            {
+                                k += pontszam;
+                                pontszam = 0;
+                                break;
+                            }
+                            else if (maradek_pont == "se")
+                            {
+                                se += pontszam;
+                                pontszam = 0;
+                                break;
+                            }
+                            else if(maradek_pont == "egyikse")
+                            {
+                                pontszam = 0;
+                                break;
+                            }
+                        }
+                    }
+                }
             }
-            
+
 
             //üdvözlés
+            Console.Clear();
             Console.WriteLine($"Vendéglátó: Üdvözlet utazó!");
             Thread.Sleep(1000);
 
