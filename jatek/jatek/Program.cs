@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Data;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Threading;
@@ -235,6 +236,7 @@ namespace jatek
             }
 
 
+
             //üdvözlés
             Console.Clear();
             Console.WriteLine($"Vendéglátó: Üdvözlet utazó!");
@@ -249,7 +251,41 @@ namespace jatek
             Thread.Sleep(1000);
             Console.WriteLine("Vendéglátó: Melyik szobának a kulcsát szeretnéd választani 1-től 10-ig? ");
 
-            int kulcs = Convert.ToInt32(Console.ReadLine());
+            int kulcs = 0;
+            int lehetosegek = 0;
+
+            while (true)
+            { 
+                string szoba_szam = Console.ReadLine();
+
+                if (int.TryParse(szoba_szam, out int szam) && szam > 0 && szam <= 10)
+                {
+
+                    kulcs = szam;
+
+                    Console.WriteLine("Vendéglátó: Tessék a kulcs");
+                    Thread.Sleep(1000);
+                    Console.WriteLine("Vendéglátó: Jó pihenést");
+                    Thread.Sleep(1000);
+                    break;
+                }
+
+                Console.WriteLine($"Narrátor: A vendélátó furcsán néz rád miközben te rámutatsz egy {szoba_szam} feliratra");
+                Thread.Sleep(1000);
+                Console.WriteLine("Vendéglátó: Nem teljesen értem, hogy melyik számra gondolsz.");
+                lehetosegek++;
+                Thread.Sleep(1000);
+                Console.WriteLine("Vendéglátó: Tehát, melyik szobát szeretnéd választani 1-től 10-ig? ");
+                
+
+                if (lehetosegek == 2)
+                {
+                    Console.WriteLine("Vendéglátó: Na jó, úgylátszik nem értetted a feladatot ezért én választom neked a 7-es szobát");
+                    kulcs = 7;
+                    break;
+                }
+            }
+
 
             if (kulcs > 10)
             {
@@ -260,7 +296,7 @@ namespace jatek
 
                 kulcs = Convert.ToInt32(Console.ReadLine());
 
-                int lehetosegek = 0;
+                lehetosegek = 0;
 
                 while (kulcs < 1 || kulcs > 10)
                 {
@@ -289,7 +325,7 @@ namespace jatek
 
                 kulcs = Convert.ToInt32(Console.ReadLine());
 
-                int lehetosegek = 0;
+                lehetosegek = 0;
 
                 while (kulcs < 1 || kulcs > 10)
                 {
@@ -309,15 +345,78 @@ namespace jatek
                     }
                 }
 
-            }       
-
-            if(kulcs <= 10)
-            {
-                Console.WriteLine("Vendéglátó: Tessék a kulcs");
-                Thread.Sleep(1000);
-                Console.WriteLine("Vendéglátó: Jó pihenést");
             }
 
+            if (kulcs <= 10)
+            {
+
+            }
+
+            //2-ES SZOBA
+
+            int megnezes = 0;
+
+            Console.Clear();
+            Console.WriteLine($"Narrátor:{nev} bement a szobájába és körbenéz");
+            Thread.Sleep(1000);
+            Console.WriteLine("Narrátor: Mit néznél meg először(Szekrény, Fiók)");
+            Thread.Sleep(1000);
+
+            string melyiket_nezed_meg = Console.ReadLine().ToLower();
+
+            if(melyiket_nezed_meg == "szekrény" && megnezes == 0)
+            {
+                Console.WriteLine("Narrátor: A szekrényben volt egy kabát aminek megnézted zsebét és találtál benne egy varázs követ");
+                Thread.Sleep(1000);
+                megnezes++;
+                Console.WriteLine("Narrátor: Megnézed a fiókot? (Igen/Nem)");
+                Thread.Sleep(1000);
+                string fiok_nezes_2 = Console.ReadLine().ToLower();
+
+                if(fiok_nezes_2 == "igen" && megnezes == 1)
+                { 
+                    Console.WriteLine("Narrátor: A fiók üres volt.");
+                    Thread.Sleep(1000);
+                }
+
+            }
+            else if(melyiket_nezed_meg == "fiók" && megnezes == 0)
+            {
+
+                Console.WriteLine("Narrátor: A fiókban volt egy varázs kő");
+                Thread.Sleep(1000);
+                megnezes++;
+                Console.WriteLine("Narrátor: Megnézed a szekrényt? (Igen/Nem)");
+                Thread.Sleep(1000);
+                string szekreny_nezes_2 = Console.ReadLine().ToLower();
+
+                if(szekreny_nezes_2 == "igen" && megnezes == 1)
+                {
+                    Console.WriteLine("Narrátor: A szekrényben volt egy kabát aminek zsebében csak egy megromlott cukorka volt");
+                    Thread.Sleep(1000);
+                }
+
+
+            }
+            else
+            {
+                while (true)
+                {
+
+                    if(melyiket_nezed_meg == "fiók" || melyiket_nezed_meg == "szekreny")
+                    { break; 
+                    
+                    }
+                    else
+                    {
+
+                        Console.WriteLine("Narrátor: Mit néznél meg először(Szekrény, Fiók)");
+
+                        melyiket_nezed_meg = Console.ReadLine().ToLower();
+
+                    }
+                }
+            }
         }
     }
 }
