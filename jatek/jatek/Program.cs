@@ -12,7 +12,6 @@ namespace jatek
         {
             //Karakter felépítés
             
-
             Console.Write("Hogy hívnak?: ");
             string nev = Console.ReadLine();
             Console.WriteLine($"Narrátor: Üdvözlet {nev}!");
@@ -31,7 +30,7 @@ namespace jatek
 
             Console.WriteLine($"Erő = {e}");
             Thread.Sleep(500);
-            Console.WriteLine($"Gyorsaság = {gy}");
+            Console.WriteLine($"GYorsaság = {gy}");
             Thread.Sleep(500);
             Console.WriteLine($"Inteligencia = {i}");
             Thread.Sleep(500);
@@ -49,7 +48,7 @@ namespace jatek
 
                 string ero_szam = Console.ReadLine();
 
-                if(int.TryParse(ero_szam,out int ero) && ero > 0 && ero <= 10)
+                if(int.TryParse(ero_szam,out int ero) && ero >= 0 && ero <= 10)
                 {
                     e = ero;
                     pontszam -= ero;
@@ -59,7 +58,7 @@ namespace jatek
 
             while (true)
             {
-                Console.Write("Gyorsaság:");
+                Console.Write("GYorsaság:");
 
                 string gyorsasag_szam = Console.ReadLine();
 
@@ -101,7 +100,7 @@ namespace jatek
 
             while (true)
             {
-                Console.Write("Szerencse:");
+                Console.Write("SzErencse:");
 
                 string szerencse_szam = Console.ReadLine();
 
@@ -139,7 +138,7 @@ namespace jatek
                 
                     Console.WriteLine($"Erő = {e}");
                     Thread.Sleep(500);
-                    Console.WriteLine($"Gyorsaság = {gy}");
+                    Console.WriteLine($"GYorsaság = {gy}");
                     Thread.Sleep(500);
                     Console.WriteLine($"Inteligencia = {i}");
                     Thread.Sleep(500);
