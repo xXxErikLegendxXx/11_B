@@ -254,10 +254,12 @@ namespace jatek
             int kulcs = 0;
             int lehetosegek = 0;
 
+            
             while (true)
-            { 
+            {
                 string szoba_szam = Console.ReadLine();
 
+                //Ha minden jól megy
                 if (int.TryParse(szoba_szam, out int szam) && szam > 0 && szam <= 10)
                 {
 
@@ -269,87 +271,40 @@ namespace jatek
                     Thread.Sleep(1000);
                     break;
                 }
+                //Ha nagyobb számot mondasz
+                else if (int.TryParse(szoba_szam, out int szam_nagyobb) && szam_nagyobb > 10)
+                {
+                    Console.WriteLine("Vendéglátó: Az egyetlen probléma ezzel a választással, hogy az a szoba foglalt.");
+                    Thread.Sleep(1000);
 
-                Console.WriteLine($"Narrátor: A vendélátó furcsán néz rád miközben te rámutatsz egy {szoba_szam} feliratra");
-                Thread.Sleep(1000);
-                Console.WriteLine("Vendéglátó: Nem teljesen értem, hogy melyik számra gondolsz.");
-                lehetosegek++;
-                Thread.Sleep(1000);
-                Console.WriteLine("Vendéglátó: Tehát, melyik szobát szeretnéd választani 1-től 10-ig? ");
-                
+                }
+                else if (int.TryParse(szoba_szam, out int szam_kisebb) && szam_kisebb < 0)
+                {
+
+                    Console.WriteLine("Vendéglátó: Az egyetlen probléma ezzel a választással, hogy ez a szoba nem létezik.");
+                    Thread.Sleep(1000);
+
+                }
+                else
+                {
+                    Console.WriteLine($"Narrátor: A vendélátó furcsán néz rád miközben te rámutatsz egy {szoba_szam} feliratra");
+                    Thread.Sleep(1000);
+                    Console.WriteLine("Vendéglátó: Nem teljesen értem, hogy mire gondolsz, hisz ilyen szoba nincs.");
+                    Thread.Sleep(500);
+                    lehetosegek++;
+                }
 
                 if (lehetosegek == 2)
                 {
                     Console.WriteLine("Vendéglátó: Na jó, úgylátszik nem értetted a feladatot ezért én választom neked a 7-es szobát");
+                    Thread.Sleep(2000);
                     kulcs = 7;
                     break;
                 }
-            }
 
-
-            if (kulcs > 10)
-            {
-
-                Console.WriteLine("Vendéglátó: Az egyetlen probléma ezzel a választással, hogy az a szoba foglalt.");
                 Thread.Sleep(1000);
                 Console.WriteLine("Vendéglátó: Tehát, melyik szobát szeretnéd választani 1-től 10-ig? ");
-
-                kulcs = Convert.ToInt32(Console.ReadLine());
-
-                lehetosegek = 0;
-
-                while (kulcs < 1 || kulcs > 10)
-                {
-                    lehetosegek++;
-                    Console.WriteLine("Vendéglátó: Az egyetlen probléma ezzel a választással, hogy az a szoba foglalt.");
-                    Thread.Sleep(1000);
-                    Console.WriteLine("Vendéglátó: Tehát, melyik szobát szeretnéd választani 1-től 10-ig? ");
-
-                    kulcs = Convert.ToInt32(Console.ReadLine());
-
-
-
-                    if (lehetosegek == 2)
-                    {
-                        Console.WriteLine("Vendéglátó: Na jó, úgylátszik nem értetted a feladatot ezért én választom neked a 7-es szobát");
-                        kulcs = 7;
-                        break;
-                    }
-                }
-            }
-            else if (kulcs < 1)
-            {
-                Console.WriteLine("Vendéglátó: Az egyetlen probléma ezzel a választással, hogy az a szoba nem létezik.");
-                Thread.Sleep(1000);
-                Console.WriteLine("Vendéglátó: Tehát, melyik szobát szeretnéd választani 1-től 10-ig? ");
-
-                kulcs = Convert.ToInt32(Console.ReadLine());
-
-                lehetosegek = 0;
-
-                while (kulcs < 1 || kulcs > 10)
-                {
-                    lehetosegek++;
-                    Console.WriteLine("Vendéglátó: Az egyetlen probléma ezzel a választással, hogy az a szoba nem létezik.");
-                    Thread.Sleep(1000);
-                    Console.WriteLine("Vendéglátó: Tehát, melyik szobát szeretnéd választani 1-től 10-ig? ");
-
-                    kulcs = Convert.ToInt32(Console.ReadLine());
-
-
-                    if (lehetosegek == 2)
-                    {
-                        Console.WriteLine("Vendéglátó: Na jó, úgylátszik nem értetted a feladatot ezért én választom neked a 7-es szobát");
-                        kulcs = 7;
-                        break;
-                    }
-                }
-
-            }
-
-            if (kulcs <= 10)
-            {
-
+                
             }
 
             //2-ES SZOBA
