@@ -15,6 +15,12 @@ namespace jatek
             
             Console.Write("Hogy hívnak?: ");
             string nev = Console.ReadLine();
+            if(nev == "")
+            {
+                Console.WriteLine("Narrátor: Na jó akkor legyen a neved Béla");
+                Thread.Sleep(1000);
+                nev = "Béla";
+            }   
             Console.WriteLine($"Narrátor: Üdvözlet {nev}!");
             Thread.Sleep(1000);
             Console.WriteLine("Narrátor: Sok szerencsét!"); //Ezt a mondatot fogadd meg ha a képességeket választod!
@@ -121,7 +127,7 @@ namespace jatek
             {
                 Console.WriteLine($"Narrátor: Nem tudom észrevetted-e,de még van {pontszam} pontod");
 
-                Console.WriteLine("Narrátor: Fel szeretnéd használni őket? (Igen/Nem):");
+                Console.WriteLine("Narrátor: Felszeretnéd használni őket? (Igen/Nem):");
                 string felhasznal = Console.ReadLine().ToLower();
 
                 while(felhasznal != "igen" && felhasznal !="nem")
@@ -153,89 +159,54 @@ namespace jatek
                     Console.WriteLine($"Narrátor: Maradék elkölthető pont:{pontszam}");
 
                     Console.WriteLine("Narrátor: Válasz egy képességet amire felakarod használni a maradék pontodat(E /GY /I /K /SE)");
-
                     string maradek_pont = Console.ReadLine().ToLower();
 
-                    if (maradek_pont == "e")
+                    while (true)
                     {
-                        e += pontszam;
-                        pontszam = 0;
-                    }
-
-                    else if (maradek_pont == "gy")
-                    {
-                        gy += pontszam;
-                        pontszam = 0;
-                    }
-
-                    else if (maradek_pont == "i")
-                    {
-                        i += pontszam;
-                        pontszam = 0;
-                    }
-                    else if (maradek_pont == "k")
-                    {
-                        k += pontszam;
-                        pontszam = 0;
-                    }
-                    else if (maradek_pont == "se")
-                    {
-                        se += pontszam;
-                        pontszam = 0;
-                    }
-                    else if (maradek_pont == "egyikse")
-                    {
-                        pontszam = 0;
-                    }
-                    else
-                    {
-                        while (true)
+                        if (maradek_pont == "e")
                         {
-                            Console.WriteLine("Narrátor: Válasz egy képességet amire felakarod használni a maradék pontodat(E /GY /I /K /SE)");
-
-                            maradek_pont = Console.ReadLine().ToLower();
-
-                            if (maradek_pont == "e")
-                            {
-                                e += pontszam;
-                                pontszam = 0;
-                                break;
-                            }
-                            else if (maradek_pont == "gy")
-                            {
-                                gy += pontszam;
-                                pontszam = 0;
-                                break;
-                            }
-                            else if (maradek_pont == "i")
-                            {
-                                i += pontszam;
-                                pontszam = 0;
-                                break;
-                            }
-                            else if (maradek_pont == "k")
-                            {
-                                k += pontszam;
-                                pontszam = 0;
-                                break;
-                            }
-                            else if (maradek_pont == "se")
-                            {
-                                se += pontszam;
-                                pontszam = 0;
-                                break;
-                            }
-                            else if(maradek_pont == "egyikse")
-                            {
-                                pontszam = 0;
-                                break;
-                            }
+                            e += pontszam;
+                            pontszam = 0;
+                            break;
                         }
+
+                        else if (maradek_pont == "gy")
+                        {
+                            gy += pontszam;
+                            pontszam = 0;
+                            break;
+                        }
+
+                        else if (maradek_pont == "i")
+                        {
+                            i += pontszam;
+                            pontszam = 0;
+                            break;
+                        }
+                        else if (maradek_pont == "k")
+                        {
+                            k += pontszam;
+                            pontszam = 0;
+                            break;
+                        }
+                        else if (maradek_pont == "se")
+                        {
+                            se += pontszam;
+                            pontszam = 0;
+                            break;
+                        }
+                        else if (maradek_pont == "egyikse")
+                        {
+                            pontszam = 0;
+                            break;
+                        }
+
+                        Console.WriteLine("Narrátor: Válasz egy képességet amire felakarod használni a maradék pontodat(E /GY /I /K /SE)");
+
+                        maradek_pont = Console.ReadLine().ToLower();
                     }
                 }
             }
-
-
 
             //üdvözlés
             Console.Clear();
@@ -253,6 +224,7 @@ namespace jatek
 
             int kulcs = 0;
             int lehetosegek = 0;
+            int penz = 0;
 
             
             while (true)
@@ -278,6 +250,7 @@ namespace jatek
                     Thread.Sleep(1000);
 
                 }
+                //Ha kisebb számot mondasz
                 else if (int.TryParse(szoba_szam, out int szam_kisebb) && szam_kisebb < 0)
                 {
 
@@ -285,6 +258,7 @@ namespace jatek
                     Thread.Sleep(1000);
 
                 }
+                //Ha bármi mást mondasz
                 else
                 {
                     Console.WriteLine($"Narrátor: A vendélátó furcsán néz rád miközben te rámutatsz egy {szoba_szam} feliratra");
@@ -294,6 +268,8 @@ namespace jatek
                     lehetosegek++;
                 }
 
+
+                //Ha sokat hibázol választ neked a játék egy szobát
                 if (lehetosegek == 2)
                 {
                     Console.WriteLine("Vendéglátó: Na jó, úgylátszik nem értetted a feladatot ezért én választom neked a 7-es szobát");
@@ -307,71 +283,174 @@ namespace jatek
                 
             }
 
+
             //2-ES SZOBA
 
-            int megnezes = 0;
+            if (kulcs == 2) 
+            { 
+                //Mennyit néztél ez azért kell, hogy más legyen a kimenetele a történetnek
+                int megnezes = 0;
 
-            Console.Clear();
-            Console.WriteLine($"Narrátor:{nev} bement a szobájába és körbenéz");
-            Thread.Sleep(1000);
-            Console.WriteLine("Narrátor: Mit néznél meg először(Szekrény, Fiók)");
-            Thread.Sleep(1000);
-
-            string melyiket_nezed_meg = Console.ReadLine().ToLower();
-
-            if(melyiket_nezed_meg == "szekrény" && megnezes == 0)
-            {
-                Console.WriteLine("Narrátor: A szekrényben volt egy kabát aminek megnézted zsebét és találtál benne egy varázs követ");
+                Console.Clear();
+                Console.WriteLine($"Narrátor:{nev} bement a szobájába és körbenéz");
                 Thread.Sleep(1000);
-                megnezes++;
-                Console.WriteLine("Narrátor: Megnézed a fiókot? (Igen/Nem)");
+                Console.WriteLine("Narrátor: Mit néznél meg először(Szekrény, Fiók)");
                 Thread.Sleep(1000);
-                string fiok_nezes_2 = Console.ReadLine().ToLower();
 
-                if(fiok_nezes_2 == "igen" && megnezes == 1)
-                { 
-                    Console.WriteLine("Narrátor: A fiók üres volt.");
-                    Thread.Sleep(1000);
-                }
+                string melyiket_nezed_meg = Console.ReadLine().ToLower();
 
-            }
-            else if(melyiket_nezed_meg == "fiók" && megnezes == 0)
-            {
-
-                Console.WriteLine("Narrátor: A fiókban volt egy varázs kő");
-                Thread.Sleep(1000);
-                megnezes++;
-                Console.WriteLine("Narrátor: Megnézed a szekrényt? (Igen/Nem)");
-                Thread.Sleep(1000);
-                string szekreny_nezes_2 = Console.ReadLine().ToLower();
-
-                if(szekreny_nezes_2 == "igen" && megnezes == 1)
-                {
-                    Console.WriteLine("Narrátor: A szekrényben volt egy kabát aminek zsebében csak egy megromlott cukorka volt");
-                    Thread.Sleep(1000);
-                }
-
-
-            }
-            else
-            {
                 while (true)
                 {
+                    //Ha a szekrényt nézed meg először
+                    if (melyiket_nezed_meg == "szekrény" && megnezes == 0)
+                    {
+                        Console.WriteLine("Narrátor: A szekrényben volt egy kabát aminek megnézted zsebét és találtál benne egy varázs követ");
+                        Thread.Sleep(1000);
+                        megnezes++;
+                        Console.WriteLine("Narrátor: Megnézed a fiókot? (Igen/Nem)");
+                        Thread.Sleep(1000);
+                        string fiok_nezes_2 = Console.ReadLine().ToLower();
 
-                    if(melyiket_nezed_meg == "fiók" || melyiket_nezed_meg == "szekreny")
-                    { break; 
-                    
+                        while (true)
+                        {
+                            if (fiok_nezes_2 == "igen" && megnezes == 1)
+                            {
+                                Console.WriteLine("Narrátor: A fiók üres volt.");
+                                Thread.Sleep(1000);
+                                break;
+                            }
+                            else if(fiok_nezes_2 == "nem" && megnezes == 1){
+
+                                Console.WriteLine($"Narrátor: {nev} úgy döntött, hogy nem nézi meg a fiókot");
+                                Console.WriteLine("Milyen igaza van végülis úgyis csak kacatok vannak benne. Ugye?");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Narrátor: Elnézést kérek, elfelejtettem, hogy milyen nehéz kérdést tettem fel");
+                                Thread.Sleep(1000);
+                                Console.WriteLine("Narrátor: Hagy ismételjem meg mégegyszer");
+                                Thread.Sleep(1000);
+                                Console.WriteLine("Narrátor: Megnézed a fiókot? (Igen/Nem)");
+                                fiok_nezes_2 = Console.ReadLine().ToLower();
+
+                            }
+                        }
                     }
+
+                    //Ha a szekrényt nézed meg először
+                    else if (melyiket_nezed_meg == "fiók" && megnezes == 0)
+                    {
+
+                        Console.WriteLine("Narrátor: A fiókban volt egy varázs kő");
+                        Thread.Sleep(1000);
+                        megnezes++;
+                        Console.WriteLine("Narrátor: Megnézed a szekrényt? (Igen/Nem)");
+                        Thread.Sleep(1000);
+                        string szekreny_nezes_2 = Console.ReadLine().ToLower();
+                        while (true)
+                        {
+                            if (szekreny_nezes_2 == "igen" && megnezes == 1)
+                            {
+                                Console.WriteLine("Narrátor: A szekrényben volt egy kabát aminek zsebében csak egy megromlott cukorka volt");
+                                Thread.Sleep(1000);
+                                break;
+                            }
+                            else if (szekreny_nezes_2 == "nem" && megnezes == 1)
+                            {
+
+                                Console.WriteLine($"Narrátor: {nev} nem nézi meg a szekrényt");
+                                Thread.Sleep(1000);
+                                Console.WriteLine("Narrátor: Végülis mi lehet egy szekrényben véletlen sem lehetne ott Narnia");
+                                Thread.Sleep(1000);
+                                Console.WriteLine("Narrátor: Vagy egy kabát amiben arany van");
+                                Thread.Sleep(1000);
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Narrátor: Nem teljesen értettem, hogy a válasznak mi köze a kérdéshez");
+                                Thread.Sleep(1000);
+                                Console.WriteLine("Narrátor: Ezért megkérdezem mégegyszer");
+                                Thread.Sleep(1000);
+                                Console.WriteLine("Narrátor: Megnézed a szekrényt? (Igen/Nem)");
+                                szekreny_nezes_2 = Console.ReadLine().ToLower();
+
+                            }
+                        }
+                    }
+                    //Ha meg nem jó a reakció újra kérdezi
                     else
                     {
 
-                        Console.WriteLine("Narrátor: Mit néznél meg először(Szekrény, Fiók)");
+                        if (melyiket_nezed_meg == "fiók" || melyiket_nezed_meg == "szekreny")
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine($"Narrátor: Öszintén fogalmam sincs, hogy mit olvastál félre,hogy azt írd,hogy {melyiket_nezed_meg} de nem baj");
+                            Thread.Sleep(1000);
+                            Console.WriteLine("Narrátor: Próbáljuk újra");
+                            Thread.Sleep(1000);
+                            Console.WriteLine("Narrátor: Tehát mit néznél meg először(Szekrény, Fiók)");
 
-                        melyiket_nezed_meg = Console.ReadLine().ToLower();
+                            melyiket_nezed_meg = Console.ReadLine().ToLower();
 
+                        }
                     }
                 }
             }
+            // 2-es szoba vége
+            
+
+
+            // 7-ES SZOBA
+            if(kulcs == 7)
+            {
+                Console.Clear();
+                Console.WriteLine($"Narrátor: {nev} bement a szobájába és talált az asztalán egy lapot amiben egy sárkányról volt szó");
+                Thread.Sleep(1000);
+                Console.WriteLine("Narrátor: És ezt természetesen neked kell legyőznöd");
+                Thread.Sleep(1000);
+                Console.WriteLine($"Narrátor: Találtál a lap mellett egy pénzeszsákot amiben így ránézésre 1500 arany van segítek");
+                Thread.Sleep(1000);
+                Console.WriteLine($"Elveszed a pénz?(Igen/Nem)");
+                string elveszed_a_p = Console.ReadLine().ToLower();
+
+                while (true)
+
+                    if (elveszed_a_p == "igen")
+                    {
+                        penz = 1500;
+                        Console.WriteLine($"Narrátor: {nev} remekül döntött és elvette a pénzt,nem tudta kié,nem tudta honnan van, de az biztos, hogy már a tiéd");
+                        Thread.Sleep(1000);
+                        Console.WriteLine($"Jelenlegi aranyad {penz}");
+                        break;
+
+                    }
+                    else if (elveszed_a_p == "nem")
+                    {
+                        Console.WriteLine($"Narrátor: {nev} annyira becsületes,hogy nem veszi el a pénzt,vagy csak nem tudja hogy egy arany fillére sincs");
+                        Thread.Sleep(1000);
+                        Console.WriteLine("Narrátor: Az egyetlen dolga ami arany az a szíve");
+                        Thread.Sleep(1000);
+                        Console.WriteLine($"Narrátor: Jelenlegi aranyad {penz}");
+                        break;
+
+
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Narrátor: {nev} ennyi pénzt életébe nem látott ezért sokkolt állapota miatt nem is tudott rendesen válaszolni");
+                        Thread.Sleep(1000);
+                        Console.WriteLine("Narrátor: Probáljuk meg mégegyszer");
+                        Thread.Sleep(1000);
+                        Console.WriteLine($"Elveszed a pénz?(Igen/Nem)");
+                        elveszed_a_p = Console.ReadLine().ToLower();
+                    }
+            }
+            //7-es szoba vége 
         }
     }
 }
