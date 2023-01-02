@@ -236,7 +236,16 @@ namespace jatek
                 {
 
                     kulcs = szam;
-
+                    if(szam == 3 || szam == 8)
+                    {
+                        Console.WriteLine($"{nev}: *Rámutat a {szam}-as kulcsra");
+                        Thread.Sleep(1000);
+                    }
+                    else
+                    {
+                        Console.WriteLine($"{nev}: *Rámutat a {szam}-es kulcsra");
+                        Thread.Sleep(1000);
+                    }
                     Console.WriteLine("Vendéglátó: Tessék a kulcs");
                     Thread.Sleep(1000);
                     Console.WriteLine("Vendéglátó: Jó pihenést");
@@ -261,7 +270,7 @@ namespace jatek
                 //Ha bármi mást mondasz
                 else
                 {
-                    Console.WriteLine($"Narrátor: A vendélátó furcsán néz rád miközben te rámutatsz egy {szoba_szam} feliratra");
+                    Console.WriteLine($"Narrátor: A vendéglátó furcsán néz rád miközben te rámutatsz egy {szoba_szam} feliratra");
                     Thread.Sleep(1000);
                     Console.WriteLine("Vendéglátó: Nem teljesen értem, hogy mire gondolsz, hisz ilyen szoba nincs.");
                     Thread.Sleep(500);
@@ -304,7 +313,7 @@ namespace jatek
                     //Ha a szekrényt nézed meg először
                     if (melyiket_nezed_meg == "szekrény" && megnezes == 0)
                     {
-                        Console.WriteLine("Narrátor: A szekrényben volt egy kabát aminek megnézted zsebét és találtál benne egy varázs követ");
+                        Console.WriteLine("Narrátor: A szekrényben volt egy kabát aminek megnézted zsebét és találtál benne egy varázskövet ami egy irányt mutat");
                         Thread.Sleep(1000);
                         megnezes++;
                         Console.WriteLine("Narrátor: Megnézed a fiókot? (Igen/Nem)");
@@ -338,16 +347,17 @@ namespace jatek
                         }
                     }
 
-                    //Ha a szekrényt nézed meg először
+                    //Ha a fiókot nézed meg először
                     else if (melyiket_nezed_meg == "fiók" && megnezes == 0)
                     {
 
-                        Console.WriteLine("Narrátor: A fiókban volt egy varázs kő");
+                        Console.WriteLine("Narrátor: A fiókban volt egy varázskő ami egy írányt mutat");
                         Thread.Sleep(1000);
                         megnezes++;
                         Console.WriteLine("Narrátor: Megnézed a szekrényt? (Igen/Nem)");
                         Thread.Sleep(1000);
                         string szekreny_nezes_2 = Console.ReadLine().ToLower();
+
                         while (true)
                         {
                             if (szekreny_nezes_2 == "igen" && megnezes == 1)
@@ -383,7 +393,7 @@ namespace jatek
                     else
                     {
 
-                        if (melyiket_nezed_meg == "fiók" || melyiket_nezed_meg == "szekreny")
+                        if (melyiket_nezed_meg == "fiók" || melyiket_nezed_meg == "szekrény")
                         {
                             break;
                         }
@@ -406,7 +416,7 @@ namespace jatek
 
 
             // 7-ES SZOBA
-            if(kulcs == 7)
+            else if(kulcs == 7)
             {
                 Console.Clear();
                 Console.WriteLine($"Narrátor: {nev} bement a szobájába és talált az asztalán egy lapot amiben egy sárkányról volt szó");
@@ -451,6 +461,67 @@ namespace jatek
                     }
             }
             //7-es szoba vége 
+
+            //Minden másik szoba
+            else
+            {
+                //Bemész a szobádba meglátod a posztert és alszol
+                Console.WriteLine($"Narrátor: {nev} bement a szobájába és meglátott egy posztert a lovagi tornával kapcsolatban");
+                Thread.Sleep(1000);
+                Console.WriteLine($"Narrátor: {nev} szeme felragyogott mikor meglátta ezt a lehetőséget");
+                Thread.Sleep(1000);
+                Console.WriteLine($"Narrátor: Mindig is erre várt, hogy legyen lehetősége megmutatni tehetségét valahol");
+                Thread.Sleep(1000);
+                Console.WriteLine($"Narrátor: {nev} mihamarást lefeküdt aludni, hogy részt tudjon venni ezen a tornán");
+
+                Console.Clear();
+
+                //Reggel van
+                Console.WriteLine($"Narrátor: Kireggeledett és {nev} ahogy lehetett felkelt és elindult útjára");
+                Thread.Sleep(1000);
+                Console.WriteLine("Vendéglátó: Jóreggelt utazó!");
+                Thread.Sleep(1000);
+                Console.WriteLine("Vendéglátó: Látta a posztert a lovagi tornával kap..");
+                Thread.Sleep(500);
+                Console.WriteLine($"Narrátor: {nev} kinyargalt a fogadóból még a kérdésre sem válaszolt");
+                Thread.Sleep(1000);
+                Console.WriteLine($"Narrátor: {nev} nem érzed rosszúl magad, hogy csak úgy ignoráltad a vendéglátót?");
+                Thread.Sleep(1500);
+                Console.WriteLine($"Narrátor: Na de nem baj már meg is érkeztünk a tornára");
+
+                Console.Clear();
+
+                //A tornán
+                Console.WriteLine("Torna vezető: Üdvözlet utazó!");
+                Thread.Sleep(1000);
+                Console.WriteLine("Torna vezető: Miben segíthetek ?");
+                Thread.Sleep(1000);
+                Console.WriteLine($"Narrátor: {nev} ismerősnek tartotta a lovagi torna vezetőjét");
+                Thread.Sleep(1000);
+                Console.WriteLine($"Narrátor: Így igaz {nev} ő volt a vendéglátó");
+                Thread.Sleep(1000);
+                Console.WriteLine("Narrátor: Nem olyan nagy a falu úgylátszik");
+                Thread.Sleep(1000);
+                Console.WriteLine("Torna vezető: Melyik lovag ellen szeretnél menni ? (1-3)");
+
+                int versenyzo = 0;
+                string melyik_versenyzo = Console.ReadLine();
+
+                if (int.TryParse(melyik_versenyzo, out int versenyzo_szam) && versenyzo_szam > 0 && versenyzo_szam <= 3)
+                {
+                    versenyzo = versenyzo_szam;
+
+                    //1-es lovag ero = 1 3000 aranyat kapsz
+                    //2-es lovag ero = 4 szerencsével le lehet győzni 5 kell hozzá 5000 aranyat kapsz
+                    //3-as lovag ero = 8 szerencsével le lehet győzni 7- kell hozzá 12000 aranyat kapsz + hírnevet
+
+                    if (versenyzo == 1 || versenyzo == 2)
+                        Console.WriteLine($"Torna vezető: Rendben akkor megkapod a {versenyzo}-es számú versenyzőt");
+                    else
+                        Console.WriteLine($"Torna vezető: Rendben akkor megkapot a {versenyzo}-as számú versenyzőt");
+                }
+
+            }
         }
     }
 }
