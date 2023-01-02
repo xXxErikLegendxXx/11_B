@@ -248,7 +248,7 @@ namespace jatek
                     }
                     Console.WriteLine("Vendéglátó: Tessék a kulcs");
                     Thread.Sleep(1000);
-                    Console.WriteLine("Vendéglátó: Jó pihenést");
+                    Console.WriteLine("Vendéglátó: Jó pihenést !");
                     Thread.Sleep(1000);
                     break;
                 }
@@ -420,11 +420,11 @@ namespace jatek
             {
                 Console.Clear();
                 Console.WriteLine($"Narrátor: {nev} bement a szobájába és talált az asztalán egy lapot amiben egy sárkányról volt szó");
-                Thread.Sleep(1000);
+                Thread.Sleep(2000);
                 Console.WriteLine("Narrátor: És ezt természetesen neked kell legyőznöd");
-                Thread.Sleep(1000);
+                Thread.Sleep(2000);
                 Console.WriteLine($"Narrátor: Találtál a lap mellett egy pénzeszsákot amiben így ránézésre 1500 arany van segítek");
-                Thread.Sleep(1000);
+                Thread.Sleep(2000);
                 Console.WriteLine($"Elveszed a pénz?(Igen/Nem)");
                 string elveszed_a_p = Console.ReadLine().ToLower();
 
@@ -434,7 +434,7 @@ namespace jatek
                     {
                         penz = 1500;
                         Console.WriteLine($"Narrátor: {nev} remekül döntött és elvette a pénzt,nem tudta kié,nem tudta honnan van, de az biztos, hogy már a tiéd");
-                        Thread.Sleep(1000);
+                        Thread.Sleep(2000);
                         Console.WriteLine($"Jelenlegi aranyad {penz}");
                         break;
 
@@ -442,9 +442,9 @@ namespace jatek
                     else if (elveszed_a_p == "nem")
                     {
                         Console.WriteLine($"Narrátor: {nev} annyira becsületes,hogy nem veszi el a pénzt,vagy csak nem tudja hogy egy arany fillére sincs");
-                        Thread.Sleep(1000);
+                        Thread.Sleep(2000);
                         Console.WriteLine("Narrátor: Az egyetlen dolga ami arany az a szíve");
-                        Thread.Sleep(1000);
+                        Thread.Sleep(2000);
                         Console.WriteLine($"Narrátor: Jelenlegi aranyad {penz}");
                         break;
 
@@ -453,9 +453,9 @@ namespace jatek
                     else
                     {
                         Console.WriteLine($"Narrátor: {nev} ennyi pénzt életébe nem látott ezért sokkolt állapota miatt nem is tudott rendesen válaszolni");
-                        Thread.Sleep(1000);
+                        Thread.Sleep(2000);
                         Console.WriteLine("Narrátor: Probáljuk meg mégegyszer");
-                        Thread.Sleep(1000);
+                        Thread.Sleep(2000);
                         Console.WriteLine($"Elveszed a pénz?(Igen/Nem)");
                         elveszed_a_p = Console.ReadLine().ToLower();
                     }
@@ -465,62 +465,128 @@ namespace jatek
             //Minden másik szoba
             else
             {
+                Console.Clear();
                 //Bemész a szobádba meglátod a posztert és alszol
                 Console.WriteLine($"Narrátor: {nev} bement a szobájába és meglátott egy posztert a lovagi tornával kapcsolatban");
-                Thread.Sleep(1000);
+                Thread.Sleep(3000);
                 Console.WriteLine($"Narrátor: {nev} szeme felragyogott mikor meglátta ezt a lehetőséget");
-                Thread.Sleep(1000);
+                Thread.Sleep(3000);
                 Console.WriteLine($"Narrátor: Mindig is erre várt, hogy legyen lehetősége megmutatni tehetségét valahol");
-                Thread.Sleep(1000);
+                Thread.Sleep(3000);
                 Console.WriteLine($"Narrátor: {nev} mihamarást lefeküdt aludni, hogy részt tudjon venni ezen a tornán");
+                Thread.Sleep(3500);
 
                 Console.Clear();
 
                 //Reggel van
                 Console.WriteLine($"Narrátor: Kireggeledett és {nev} ahogy lehetett felkelt és elindult útjára");
-                Thread.Sleep(1000);
+                Thread.Sleep(3000);
                 Console.WriteLine("Vendéglátó: Jóreggelt utazó!");
-                Thread.Sleep(1000);
+                Thread.Sleep(3000);
                 Console.WriteLine("Vendéglátó: Látta a posztert a lovagi tornával kap..");
-                Thread.Sleep(500);
+                Thread.Sleep(2500);
                 Console.WriteLine($"Narrátor: {nev} kinyargalt a fogadóból még a kérdésre sem válaszolt");
-                Thread.Sleep(1000);
-                Console.WriteLine($"Narrátor: {nev} nem érzed rosszúl magad, hogy csak úgy ignoráltad a vendéglátót?");
-                Thread.Sleep(1500);
-                Console.WriteLine($"Narrátor: Na de nem baj már meg is érkeztünk a tornára");
+                Thread.Sleep(5000);
+                Console.WriteLine($"Narrátor: {nev} nem érzed rosszúl magad, hogy csak úgy ignoráltad a vendéglátót? (De, Nem)");
+                string rosszul_erzed_magad = Console.ReadLine().ToLower();
+
+                while (true)
+                {
+                    
+
+                    if (rosszul_erzed_magad == "de")
+                    {
+
+                        Console.WriteLine("Narrátor: Nagyon helyes");
+                        Thread.Sleep(3000);
+                        Console.WriteLine($"Narrátor: Tudod {nev}, nem mindenki tudja átgondolni cselekedeteinek következményét");
+                        Thread.Sleep(3000);
+                        Console.WriteLine($"Narrátor: De te mégis képes voltál rá");
+                        Thread.Sleep(3000);
+                        Console.WriteLine("Narrátor: Büszke vagyok rád");
+                        Thread.Sleep(4000);
+                        break;
+
+                    }
+                    else if (rosszul_erzed_magad == "nem")
+                    {
+
+                        Console.WriteLine("Narrátor: Oh mit is gondoltam");
+                        Thread.Sleep(3000);
+                        Console.WriteLine("Narrátor: Hisz ez csak úgyis egy játék, nem ?");
+                        Thread.Sleep(3000);
+                        Console.WriteLine("Narrátor: Itt nincsenek érzései az embereknek");
+                        Thread.Sleep(3000);
+                        Console.WriteLine("Narrátor: Hát képzeld el vannak");
+                        Thread.Sleep(3000);
+                        Console.WriteLine("Narrátor: Úgyhogy jó lenne ha átgondolnád cselekedeteidet");
+                        Thread.Sleep(4000);
+                        break;
+
+                    }
+                    else
+                    {
+
+                        Console.WriteLine("Narrátor: Nem teljesen értettem");
+                        Thread.Sleep(1000);
+                        Console.WriteLine($"Narrátor: Tehát, {nev} nem érzed rosszúl magad, hogy csak úgy ignoráltad a vendéglátót? (De, Nem)");
+                        rosszul_erzed_magad = Console.ReadLine().ToLower();
+
+                    }
+
+                }
+                Console.WriteLine($"Narrátor: Ohh, míg beszélgettünk felsem tűnt, hogy megérkeztünk a tornára");
+                Thread.Sleep(3000);
+                Console.WriteLine("Narrátor: Lépj be a tornára");
+                Thread.Sleep(3000);
 
                 Console.Clear();
 
                 //A tornán
                 Console.WriteLine("Torna vezető: Üdvözlet utazó!");
-                Thread.Sleep(1000);
+                Thread.Sleep(1500);
                 Console.WriteLine("Torna vezető: Miben segíthetek ?");
-                Thread.Sleep(1000);
+                Thread.Sleep(1500);
                 Console.WriteLine($"Narrátor: {nev} ismerősnek tartotta a lovagi torna vezetőjét");
-                Thread.Sleep(1000);
+                Thread.Sleep(1500);
                 Console.WriteLine($"Narrátor: Így igaz {nev} ő volt a vendéglátó");
-                Thread.Sleep(1000);
-                Console.WriteLine("Narrátor: Nem olyan nagy a falu úgylátszik");
-                Thread.Sleep(1000);
+                Thread.Sleep(1500);
+                Console.WriteLine("Narrátor: Nem olyan nagy a falu ez úgylátszik");
+                Thread.Sleep(1500);
                 Console.WriteLine("Torna vezető: Melyik lovag ellen szeretnél menni ? (1-3)");
 
                 int versenyzo = 0;
-                string melyik_versenyzo = Console.ReadLine();
-
-                if (int.TryParse(melyik_versenyzo, out int versenyzo_szam) && versenyzo_szam > 0 && versenyzo_szam <= 3)
+                
+                while (true)
                 {
-                    versenyzo = versenyzo_szam;
+                    string melyik_versenyzo = Console.ReadLine();
 
-                    //1-es lovag ero = 1 3000 aranyat kapsz
-                    //2-es lovag ero = 4 szerencsével le lehet győzni 5 kell hozzá 5000 aranyat kapsz
-                    //3-as lovag ero = 8 szerencsével le lehet győzni 7- kell hozzá 12000 aranyat kapsz + hírnevet
+                    if (int.TryParse(melyik_versenyzo, out int versenyzo_szam) && versenyzo_szam > 0 && versenyzo_szam <= 3)
+                    {
+                        versenyzo = versenyzo_szam;
 
-                    if (versenyzo == 1 || versenyzo == 2)
-                        Console.WriteLine($"Torna vezető: Rendben akkor megkapod a {versenyzo}-es számú versenyzőt");
-                    else
-                        Console.WriteLine($"Torna vezető: Rendben akkor megkapot a {versenyzo}-as számú versenyzőt");
+                        //1-es lovag ero = 1 3000 aranyat kapsz
+                        //2-es lovag ero = 4 szerencsével le lehet győzni 5 kell hozzá 5000 aranyat kapsz
+                        //3-as lovag ero = 8 szerencsével le lehet győzni 7- kell hozzá 12000 aranyat kapsz + hírnevet
+
+                        if (versenyzo == 1 || versenyzo == 2)
+                        {
+                            Console.WriteLine($"Torna vezető: Rendben akkor megkapod a {versenyzo}-es számú versenyzőt");
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine($"Torna vezető: Rendben akkor megkapot a {versenyzo}-as számú versenyzőt");
+                            break;
+                        }
+                          
+                    }
+
+                    Console.WriteLine("Torna vezető: Látsz ilyen versenyzőt ?");
+                    Thread.Sleep(1000);
+                    Console.WriteLine("Torna vezető: Tehát melyik versenyzőt szeretnéd (1-3)");
+                    melyik_versenyzo = Console.ReadLine();
                 }
-
             }
         }
     }
