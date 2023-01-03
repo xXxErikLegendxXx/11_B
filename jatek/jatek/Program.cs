@@ -513,9 +513,9 @@ namespace jatek
 
                         Console.WriteLine("Narrátor: Oh mit is gondoltam");
                         Thread.Sleep(3000);
-                        Console.WriteLine("Narrátor: Hisz ez csak úgyis egy játék, nem ?");
+                        Console.WriteLine("Narrátor: Hisz ez úgyis csak egy játék, nem ?");
                         Thread.Sleep(3000);
-                        Console.WriteLine("Narrátor: Itt nincsenek érzései az embereknek");
+                        Console.WriteLine("Narrátor: Itt nincsenek érzéseik az embereknek");
                         Thread.Sleep(3000);
                         Console.WriteLine("Narrátor: Hát képzeld el vannak");
                         Thread.Sleep(3000);
@@ -551,7 +551,7 @@ namespace jatek
                 Thread.Sleep(1500);
                 Console.WriteLine($"Narrátor: Így igaz {nev} ő volt a vendéglátó");
                 Thread.Sleep(1500);
-                Console.WriteLine("Narrátor: Nem olyan nagy a falu ez úgylátszik");
+                Console.WriteLine("Narrátor: Nem olyan nagy falu ez úgy látszik");
                 Thread.Sleep(1500);
                 Console.WriteLine("Torna vezető: Melyik lovag ellen szeretnél menni ? (1-3)");
 
@@ -567,17 +567,19 @@ namespace jatek
 
                         //1-es lovag ero = 1 3000 aranyat kapsz
                         //2-es lovag ero = 4 szerencsével le lehet győzni 5 kell hozzá 5000 aranyat kapsz
-                        //3-as lovag ero = 8 szerencsével le lehet győzni 7- kell hozzá 12000 aranyat kapsz + hírnevet
+                        //3-as lovag ero = 8 szerencsével le lehet győzni 7 kell hozzá 12000 aranyat kapsz + hírnevet
 
 
-                        if (versenyzo == 1 || versenyzo == 2 || versenyzo == 3)
+                        if (versenyzo == 1 || versenyzo == 2)
                         {
                             Console.WriteLine($"Torna vezető: Rendben akkor megkapod a {versenyzo}-es számú versenyzőt");
+                            Thread.Sleep(2000);
                             break;
                         }
                         else
                         {
                             Console.WriteLine($"Torna vezető: Rendben akkor megkapot a {versenyzo}-as számú versenyzőt");
+                            Thread.Sleep(2000);
                             break;
                         }
                           
@@ -586,10 +588,97 @@ namespace jatek
                     Console.WriteLine("Torna vezető: Látsz ilyen versenyzőt ?");
                     Thread.Sleep(1000);
                     Console.WriteLine("Torna vezető: Tehát melyik versenyzőt szeretnéd (1-3)");
-                    melyik_versenyzo = Console.ReadLine();
                 }
 
                 Console.WriteLine($"Narrátor: {nev} kiválasztotta riválisát");
+                Thread.Sleep(2000);
+                Console.WriteLine("Narrátor: Lóra ülés után pedig felkészült az ütközésre");
+                Thread.Sleep(2000);
+
+
+                //Torna vége itt ez csak azért kell hogy mi alapján írja ki a cuccokat
+                int torna_vege = 0;
+
+                if(versenyzo == 1)
+                {
+                    Console.WriteLine($"Narrátor: {nev} és riválisa egymásnak ütköztek");
+                    Thread.Sleep(2000);
+
+                    if (e < 1)
+                    {
+
+                        torna_vege = 1;
+
+                    }
+                    else
+                    {
+
+                        torna_vege = 2;
+
+                    }
+                }
+                else if(versenyzo == 2)
+                {
+                    Console.WriteLine($"Narrátor: {nev} és riválisa egymásnak ütköztek");
+                    Thread.Sleep(2000);
+
+                    if (e < 4 || se < 5)
+                    {
+
+                        torna_vege = 1;
+                    }
+                    else
+                    {
+
+                        torna_vege = 2;
+
+                    }
+                }
+                else
+                {
+                    Console.WriteLine($"Narrátor: {nev} és riválisa egymásnak ütköztek");
+                    Thread.Sleep(2000);
+
+                    if (e < 8 || se < 7)
+                    {
+                        torna_vege = 1;
+                    }
+                    else
+                    {
+                        torna_vege = 2;
+                    }
+                }
+                //Ha nem sikerül a torna 
+                if(torna_vege == 1) 
+                {
+
+                    Console.WriteLine("Narrátor: És...");
+                    Thread.Sleep(4000);
+                    Console.WriteLine("Narrátor: Micsoda adj egy pillanatot, csak át kell újra olvassam a forgató könyvet");
+                    Thread.Sleep(4000);
+                    Console.WriteLine("Narrátor: Nem lehetséges, hogy vesztettél, hisz a főszereplő vagy");
+                    Thread.Sleep(4000);
+                    Console.WriteLine("Narrátor: Na jó, akkor új történetet találok ki, egy pillanat");
+                    Thread.Sleep(10000);
+                    Console.WriteLine("Narrátor: Remek megvagyok, tehát");
+                    Thread.Sleep(2000);
+                    Console.WriteLine($"Narrátor: {nev} az ütközés pillanatába miközben esett volna le a lóról megkapaszkodott");
+                    Thread.Sleep(3000);
+                    Console.WriteLine("Narrátor: és pálcájával amit a hóna alatt tartott leütötte riválisát, így ő nyert");
+                    Thread.Sleep(6000);
+                    Console.WriteLine("Narrátor: Ennyi, vége a történetnek");
+                    Thread.Sleep(3000);
+                    Console.WriteLine("Narrátor: Ez van, ezt tudtam kitalálni");
+                    Thread.Sleep(3000);
+                    Console.WriteLine("Narrátor: Legközelebb nyerj mint minden másik történetben amiben van egy főszereplő");
+                }
+
+                //Ha sikerül a torna
+                else if( torna_vege == 2) 
+                { 
+                
+                
+                }
 
 
             }
