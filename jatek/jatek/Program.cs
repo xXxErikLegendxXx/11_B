@@ -569,7 +569,8 @@ namespace jatek
                         //2-es lovag ero = 4 szerencsével le lehet győzni 5 kell hozzá 5000 aranyat kapsz
                         //3-as lovag ero = 8 szerencsével le lehet győzni 7- kell hozzá 12000 aranyat kapsz + hírnevet
 
-                        if (versenyzo == 1 || versenyzo == 2)
+
+                        if (versenyzo == 1 || versenyzo == 2 || versenyzo == 3)
                         {
                             Console.WriteLine($"Torna vezető: Rendben akkor megkapod a {versenyzo}-es számú versenyzőt");
                             break;
@@ -587,6 +588,10 @@ namespace jatek
                     Console.WriteLine("Torna vezető: Tehát melyik versenyzőt szeretnéd (1-3)");
                     melyik_versenyzo = Console.ReadLine();
                 }
+
+                Console.WriteLine($"Narrátor: {nev} kiválasztotta riválisát");
+
+
             }
         }
     }
