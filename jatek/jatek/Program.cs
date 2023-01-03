@@ -565,7 +565,7 @@ namespace jatek
                     {
                         versenyzo = versenyzo_szam;
 
-                        //1-es lovag ero = 1 3000 aranyat kapsz
+                        //1-es lovag ero = 1 1 szerencse 3000 aranyat kapsz
                         //2-es lovag ero = 4 szerencsével le lehet győzni 5 kell hozzá 5000 aranyat kapsz
                         //3-as lovag ero = 8 szerencsével le lehet győzni 7 kell hozzá 12000 aranyat kapsz + hírnevet
 
@@ -604,7 +604,7 @@ namespace jatek
                     Console.WriteLine($"Narrátor: {nev} és riválisa egymásnak ütköztek");
                     Thread.Sleep(2000);
 
-                    if (e < 1)
+                    if (e < 1 || se < 1)
                     {
 
                         torna_vege = 1;
@@ -684,4 +684,7 @@ namespace jatek
             }
         }
     }
+
+
+
 }
