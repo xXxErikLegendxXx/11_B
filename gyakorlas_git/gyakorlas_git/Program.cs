@@ -4,8 +4,9 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
-            Console.WriteLine("Ez egy próba");
+            string alma = "alma";
+
+            Console.WriteLine(alma[0]);
         }
     }
 }
