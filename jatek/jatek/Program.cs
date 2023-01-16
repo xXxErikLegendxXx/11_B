@@ -488,6 +488,7 @@ namespace jatek
                 Console.WriteLine($"Narrátor: {nev} kinyargalt a fogadóból még a kérdésre sem válaszolt");
                 Thread.Sleep(5000);
                 Console.WriteLine($"Narrátor: {nev} nem érzed rosszúl magad, hogy csak úgy ignoráltad a vendéglátót? (De, Nem)");
+
                 string rosszul_erzed_magad = Console.ReadLine().ToLower();
 
                 while (true)
