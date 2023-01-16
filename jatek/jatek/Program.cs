@@ -467,7 +467,7 @@ namespace jatek
             {
                 Console.Clear();
                 //Bemész a szobádba meglátod a posztert és alszol
-                Console.WriteLine($"Narrátor: {nev} bement a szobájába és meglátott egy posztert a lovagi tornával kapcsolatban");
+                Console.WriteLine($"Narrátor: {nev} bement a szobájába és meglátott egy posztert egy lovagi tornával kapcsolatban");
                 Thread.Sleep(3000);
                 Console.WriteLine($"Narrátor: {nev} szeme felragyogott mikor meglátta ezt a lehetőséget");
                 Thread.Sleep(3000);
@@ -535,7 +535,7 @@ namespace jatek
                     }
 
                 }
-                Console.WriteLine($"Narrátor: Ohh, míg beszélgettünk felsem tűnt, hogy megérkeztünk a tornára");
+                Console.WriteLine($"Narrátor: Ohh, míg beszélgettünk fel sem tűnt, hogy megérkeztünk a tornára");
                 Thread.Sleep(3000);
                 Console.WriteLine("Narrátor: Lépj be a tornára");
                 Thread.Sleep(3000);
@@ -553,6 +553,26 @@ namespace jatek
                 Thread.Sleep(1500);
                 Console.WriteLine("Narrátor: Nem olyan nagy falu ez úgy látszik");
                 Thread.Sleep(1500);
+
+                //Ha rosszúl érezdet magad akkor segít neked a játék
+                if(rosszul_erzed_magad == "de" && e >= 4 || se >= 5)
+                {
+                    if (e >= 8 || se >= 7)
+                    {
+                        Console.WriteLine("Torna vezető: A testalkatodból kiindúlva nincs ellenfeled");
+                        Thread.Sleep(2000);
+                        Console.WriteLine("Torna vezető: Ezért ajánlom neked a 3-as versenyzőt");
+                        Thread.Sleep(2000);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Torna vezető: A testalkatodból kiindúlva nem lesz nagy probléma ez a csata");
+                        Thread.Sleep(2000);
+                        Console.WriteLine("Torna vezető: De a 3-as versenyző szerintem nagy falat");
+                        Thread.Sleep(2000);
+                    }
+                }   
+
                 Console.WriteLine("Torna vezető: Melyik lovag ellen szeretnél menni ? (1-3)");
 
                 int versenyzo = 0;
@@ -592,29 +612,39 @@ namespace jatek
 
                 Console.WriteLine($"Narrátor: {nev} kiválasztotta riválisát");
                 Thread.Sleep(2000);
-                Console.WriteLine("Narrátor: Lóra ülés után pedig felkészült az ütközésre");
+                Console.WriteLine("Narrátor: Lóra ülés után pedig felkészült az ütközetre");
                 Thread.Sleep(2000);
 
 
                 //Torna vége itt ez csak azért kell hogy mi alapján írja ki a cuccokat
                 int torna_vege = 0;
+                int szer_nyer = 0;
+                int e_nyer = 0;
 
                 if(versenyzo == 1)
                 {
                     Console.WriteLine($"Narrátor: {nev} és riválisa egymásnak ütköztek");
                     Thread.Sleep(2000);
 
-                    if (e < 1 || se < 1)
+                    //vesztés
+                    if (e < 1 && se < 1)
                     {
-
                         torna_vege = 1;
-
                     }
+
+                    //nyerés
                     else
                     {
-
+                        //Mivel nyertél
+                        if (e > se)
+                        {
+                            e_nyer = 1;
+                        }
+                        else
+                        {
+                            szer_nyer = 1;
+                        }
                         torna_vege = 2;
-
                     }
                 }
                 else if(versenyzo == 2)
@@ -622,16 +652,24 @@ namespace jatek
                     Console.WriteLine($"Narrátor: {nev} és riválisa egymásnak ütköztek");
                     Thread.Sleep(2000);
 
-                    if (e < 4 || se < 5)
+                    //vesztés
+                    if (e < 4 && se < 5)
                     {
-
                         torna_vege = 1;
                     }
+                    //nyerés
                     else
                     {
-
+                        //Mivel nyertél
+                        if (e > se)
+                        {
+                            e_nyer = 1;
+                        }
+                        else if (se > e)
+                        {
+                            szer_nyer = 1;
+                        }
                         torna_vege = 2;
-
                     }
                 }
                 else
@@ -639,15 +677,27 @@ namespace jatek
                     Console.WriteLine($"Narrátor: {nev} és riválisa egymásnak ütköztek");
                     Thread.Sleep(2000);
 
-                    if (e < 8 || se < 7)
+                    //vesztés
+                    if (e < 8 && se < 7)
                     {
                         torna_vege = 1;
                     }
+                    //nyerés
                     else
                     {
+                        //Mivel nyertél
+                        if (e > se)
+                        { 
+                            e_nyer = 1;
+                        }
+                        else if (se > e)
+                        {
+                            szer_nyer = 1;
+                        }
                         torna_vege = 2;
                     }
                 }
+
                 //Ha nem sikerül a torna 
                 if(torna_vege == 1) 
                 {
@@ -675,12 +725,74 @@ namespace jatek
 
                 //Ha sikerül a torna
                 else if( torna_vege == 2) 
-                { 
-                
-                
+                {
+
+                    Console.WriteLine("Narrátor: És...");
+                    Thread.Sleep(4000);
+                    //Ha erővel nyertél
+                    if(e_nyer == 1)
+                    {
+                        Console.WriteLine($"Narrátor: {nev} az ütközés során lerepítette ellenfelét a lóról, riválisának esélye sem volt");
+                        Thread.Sleep(4000);
+                    }
+                    //Ha szerencsével nyertél
+                    else if (szer_nyer == 1)
+                    {
+                        Console.WriteLine($"Narrátor: {nev} szerencséjére az elindulás pillanatába kificamodott az ellenfél lovának a bokája így felborúlt");
+                        Thread.Sleep(4000);
+
+                    }
+
+                    Console.WriteLine($"Narrátor: Ez álltal te lettél a győztes");
+                    Thread.Sleep(4000);
+
+                    if(versenyzo == 1) 
+                    {
+
+                        Console.WriteLine($"Torna Vezető: Mivel az 1-es versenyzőt legyőzted");
+                        Thread.Sleep(2000);
+                        Console.WriteLine("Torna Vezető: Nyereményed 3000 arany");
+                        Thread.Sleep(2000);
+                        Console.WriteLine($"Narrátor: {nev} megkapta a 3000 aranyat és elment a tornáról");
+                        Thread.Sleep(2000);
+                        Console.WriteLine($"Narrátor: {nev} a 3000 aranyával bemegy egy vendéglátóba és elszórakozza pénzét");
+                        Thread.Sleep(2000);
+                        Console.WriteLine($"Narrátor: Ezután pedig {nev} bement a szobájába és meglátott egy posztert egy lovagi tornával kapcsolatban");
+                        Thread.Sleep(4000);
+                        Console.WriteLine("Narrátor: És ezt boldogan csinálja napról napra míg meg nem hal");
+
+                    }
+                    else if (versenyzo == 2) 
+                    {
+                        Console.WriteLine($"Torna Vezető: Mivel az 2-es versenyzőt legyőzted");
+                        Thread.Sleep(2000);
+                        Console.WriteLine("Torna Vezető: Nyereményed 5000 arany");
+                        Thread.Sleep(2000);
+                        Console.WriteLine($"Narrátor: {nev} megkapta a 5000 aranyat és elment a tornáról");
+                        Thread.Sleep(2000);
+                        Console.WriteLine($"Narrátor: {nev} a 5000 aranyával vett egy lovat");
+                        Thread.Sleep(2000);
+                        Console.WriteLine($"Narrátor: A lóval pedig tovább járja a falukat és különböző kalandokat él meg");
+                        Thread.Sleep(4000);
+                        Console.WriteLine("Narrátor: És boldogan él míg meg nem hal");
+                    }
+                    else if (versenyzo == 3) 
+                    {
+                        Console.WriteLine($"Torna Vezető: Mivel az 3-as versenyzőt legyőzted");
+                        Thread.Sleep(2000);
+                        Console.WriteLine("Torna Vezető: Nyereményed 12000 arany és hírnév a faluban");
+                        Thread.Sleep(2000);
+                        Console.WriteLine($"Narrátor: {nev} megkapta a 12000 aranyat és elment a tornáról");
+                        Thread.Sleep(2000);
+                        Console.WriteLine($"Narrátor: Mindenki ismert és tisztelt téged a torna után");
+                        Thread.Sleep(2000);
+                        Console.WriteLine($"Narrátor: A hírneved miatt elvetted a királynőt feleségül");
+                        Thread.Sleep(4000);
+                        Console.WriteLine("Narrátor: És boldogan éltetek míg meg nem haltatok");
+                    }
                 }
 
-
+            //Minden másik szoba vége
             }
         }
     }
