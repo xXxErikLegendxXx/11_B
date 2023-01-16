@@ -331,15 +331,17 @@ namespace jatek
                             else if(fiok_nezes_2 == "nem" && megnezes == 1){
 
                                 Console.WriteLine($"Narrátor: {nev} úgy döntött, hogy nem nézi meg a fiókot");
+                                Thread.Sleep(2000);
                                 Console.WriteLine("Milyen igaza van végülis úgyis csak kacatok vannak benne. Ugye?");
+                                Thread.Sleep(2000);
                                 break;
                             }
                             else
                             {
                                 Console.WriteLine("Narrátor: Elnézést kérek, elfelejtettem, hogy milyen nehéz kérdést tettem fel");
-                                Thread.Sleep(1000);
+                                Thread.Sleep(3000);
                                 Console.WriteLine("Narrátor: Hagy ismételjem meg mégegyszer");
-                                Thread.Sleep(1000);
+                                Thread.Sleep(3000);
                                 Console.WriteLine("Narrátor: Megnézed a fiókot? (Igen/Nem)");
                                 fiok_nezes_2 = Console.ReadLine().ToLower();
 
@@ -370,19 +372,19 @@ namespace jatek
                             {
 
                                 Console.WriteLine($"Narrátor: {nev} nem nézi meg a szekrényt");
-                                Thread.Sleep(1000);
+                                Thread.Sleep(3000);
                                 Console.WriteLine("Narrátor: Végülis mi lehet egy szekrényben véletlen sem lehetne ott Narnia");
-                                Thread.Sleep(1000);
+                                Thread.Sleep(3000);
                                 Console.WriteLine("Narrátor: Vagy egy kabát amiben arany van");
-                                Thread.Sleep(1000);
+                                Thread.Sleep(3000);
                                 break;
                             }
                             else
                             {
                                 Console.WriteLine("Narrátor: Nem teljesen értettem, hogy a válasznak mi köze a kérdéshez");
-                                Thread.Sleep(1000);
+                                Thread.Sleep(2000);
                                 Console.WriteLine("Narrátor: Ezért megkérdezem mégegyszer");
-                                Thread.Sleep(1000);
+                                Thread.Sleep(2000);
                                 Console.WriteLine("Narrátor: Megnézed a szekrényt? (Igen/Nem)");
                                 szekreny_nezes_2 = Console.ReadLine().ToLower();
 
@@ -406,6 +408,70 @@ namespace jatek
                             Console.WriteLine("Narrátor: Tehát mit néznél meg először(Szekrény, Fiók)");
 
                             melyiket_nezed_meg = Console.ReadLine().ToLower();
+
+                        }
+                    }
+
+                    Console.WriteLine($"Narrátor: {nev} elvette a varázskövet és lefeküdt aludni");
+                    Thread.Sleep(2000);
+
+                    Console.Clear();
+                    Console.WriteLine("Narrátor: Másnap reggel lett");
+                    Thread.Sleep(3000);
+                    Console.WriteLine($"Narrátor: {nev} felkelt és ahogy lehetett elkezdte követni a követ");
+                    Thread.Sleep(3000);
+                    Console.WriteLine("Narrátor: A Kő a vendéglátóból kivezette főszereplőnket");
+                    Thread.Sleep(3000);
+                    Console.WriteLine("Narrátor: De még mielött kiment volna főszereplőnk megállította őt a vendéglátó");
+                    Thread.Sleep(4000);
+                    Console.WriteLine("Vendéglátó: Nocsak nocsak, ahogy látom megtaláltad a varázskövet");
+                    Thread.Sleep(4000);
+                    Console.WriteLine("Narrátor: Vajon honnan tud a vendéglátó a varázskőről");
+                    Thread.Sleep(4000);
+                    Console.WriteLine("Vendéglátó: Most biztos azon gondolkodsz, hogy honnan tudok a kőröl");
+                    Thread.Sleep(4000);
+                    Console.WriteLine("Vendéglátó: Az elötted lévő emberé volt, aki egy varázsló volt elmondása szerint");
+                    Thread.Sleep(4000);
+                    Console.WriteLine("Vendéglátó: A követ pedig itt hagyta mikor elment");
+                    Thread.Sleep(3000);
+                    Console.WriteLine("Vendéglátó: Vissza adod neki? (Igen/Nem)");
+                    string vissza_adod_neki = Console.ReadLine().ToLower();
+
+                    while (true)
+                    {
+                        if (vissza_adod_neki == "igen")
+                        {
+                            Console.WriteLine($"Narrátor: {nev} bólogatva beleegyezett");
+                            Thread.Sleep(3000);
+                            Console.WriteLine("Vendéglátó: Szuper!");
+                            Thread.Sleep(2000);
+                            Console.WriteLine("Vendéglátó: Akkor utadra is engedlek");
+                            Thread.Sleep(3000);
+                            break;
+
+                        }
+                        else if (vissza_adod_neki == "nem")
+                        {
+                            Console.WriteLine($"Narrátor: {nev} rázta a fejét de lényegtelen volt hisz így is úgyis elmegy a varázslóhoz");
+                            Thread.Sleep(3000);
+                            Console.WriteLine("Narrátor: A vendéglátó pedig azt hitte hogy beleegyeztél");
+                            Thread.Sleep(2000);
+                            Console.WriteLine("Vendéglátó: Szuper!");
+                            Thread.Sleep(2000);
+                            Console.WriteLine("Vendéglátó: Akkor utadra is engedlek");
+                            Thread.Sleep(2000);
+                            break;
+
+                        }
+                        else
+                        {
+                            Console.WriteLine("Vendéglátó: Ezt nem igazán értem");
+                            Thread.Sleep(2000);
+                            Console.WriteLine("Narrátor: Én sem értem teljesen");
+                            Thread.Sleep(2000);
+                            Console.WriteLine("Vendéglátó: Tehát vissza adod neki? (Igen/Nem)");
+
+                            vissza_adod_neki = Console.ReadLine();
 
                         }
                     }
@@ -461,6 +527,8 @@ namespace jatek
                     }
             }
             //7-es szoba vége 
+
+
 
             //Minden másik szoba
             else
