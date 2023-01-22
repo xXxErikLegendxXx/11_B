@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Diagnostics.CodeAnalysis;
+using System.Net.Http.Headers;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Xml;
 
@@ -143,15 +145,15 @@ namespace jatek
                 else if (felhasznal == "igen")
                 {
                 
-                    Console.WriteLine($"Erő = {e}");
+                    Console.WriteLine($"Erő = {e}");//lovagitorna, sárkány
                     Thread.Sleep(500);
-                    Console.WriteLine($"GYorsaság = {gy}");
+                    Console.WriteLine($"GYorsaság = {gy}");//sárkány
                     Thread.Sleep(500);
-                    Console.WriteLine($"Inteligencia = {i}");
+                    Console.WriteLine($"Inteligencia = {i}");//varázsló
                     Thread.Sleep(500);
-                    Console.WriteLine($"Karizma = {k}");
+                    Console.WriteLine($"Karizma = {k}");//sárkány (kovács)
                     Thread.Sleep(500);
-                    Console.WriteLine($"SzErencse = {se}");
+                    Console.WriteLine($"SzErencse = {se}"); //varázsló, lovagitorna, sárkány
                     Thread.Sleep(500);
                     Console.WriteLine();
                     Thread.Sleep(500);
@@ -225,11 +227,11 @@ namespace jatek
             int kulcs = 0;
             int lehetosegek = 0;
             int penz = 0;
+            string szoba_szam = Console.ReadLine();
 
-            
+
             while (true)
             {
-                string szoba_szam = Console.ReadLine();
 
                 //Ha minden jól megy
                 if (int.TryParse(szoba_szam, out int szam) && szam > 0 && szam <= 10)
@@ -332,8 +334,8 @@ namespace jatek
 
                                 Console.WriteLine($"Narrátor: {nev} úgy döntött, hogy nem nézi meg a fiókot");
                                 Thread.Sleep(2000);
-                                Console.WriteLine("Milyen igaza van végülis úgyis csak kacatok vannak benne. Ugye?");
-                                Thread.Sleep(2000);
+                                Console.WriteLine("Narrátor: Milyen igaza van végülis úgyis csak kacatok vannak benne. Ugye?");
+                                Thread.Sleep(4000);
                                 break;
                             }
                             else
@@ -472,9 +474,394 @@ namespace jatek
                             Console.WriteLine("Vendéglátó: Tehát vissza adod neki? (Igen/Nem)");
 
                             vissza_adod_neki = Console.ReadLine();
-
                         }
                     }
+                    Console.Clear();
+                    Console.WriteLine($"Narrátor: {nev} megérkezett a varázsló barlangjának bejáratához");
+                    Thread.Sleep(2000);
+                    Console.WriteLine("Narrátor: Találtál a barlang bejárata mellett egy csengőt");
+                    Thread.Sleep(2000);
+                    Console.WriteLine("Narrátor: Megnyomod? (Igen/Nem)");
+
+                    string megnyomod_e = Console.ReadLine().ToLower();
+
+                    while (true)
+                    {
+
+                        if(megnyomod_e == "igen") 
+                        {
+
+                            Console.WriteLine($"Narrátor: {nev} illedelmesen becsengetett a barlangba");
+                            Thread.Sleep(2000);
+                            Console.WriteLine("Narrátor: És a varázsló kiszólt");
+                            Thread.Sleep(2000);
+                            Console.WriteLine("Varázsló: Gyere be utazó");
+                            Thread.Sleep(2000);
+                            Console.WriteLine($"Narrátor: {nev} bement a barlangba és találkozott a varázslóval");
+                            Thread.Sleep(2000);
+                            Console.WriteLine("Varázsló: Üdvözlet utazó");
+                            break;
+
+                        }
+                        else if(megnyomod_e == "nem") 
+                        {
+
+                            Console.WriteLine("Narrátor: Nem csengettél be a barlangba");
+                            Thread.Sleep(2000);
+                            Console.WriteLine("Narrátor: De nem baj nem mindenkit neveltek illedelemre");
+                            Thread.Sleep(2000);
+                            Console.WriteLine("Narrátor: Barlangba menet közbe ráléptél egy mágikus csapdára");
+                            Thread.Sleep(2000);
+                            Console.WriteLine("Narrátor: A csapda pedig beteleportált a varázsló egyik ketrecébe");
+                            break;
+
+                        }
+                        else
+                        {
+                            Console.WriteLine("Narrátor: Nem igazán értettem");
+                            Thread.Sleep(2000);
+                            Console.WriteLine("Narrátor: Megnyomod a csengőt? (Igen/Nem)");
+                            megnyomod_e = Console.ReadLine().ToLower();
+                        } 
+                    }
+
+                    Console.WriteLine("Narrátor: Nem ismerős a varázsló ?");
+                    Thread.Sleep(4000);
+                    Console.WriteLine("Narrátor: Így, igaz ő volt a vendéglátó");
+                    Thread.Sleep(2000);
+
+                    if (megnyomod_e == "nem")
+                    {
+                        Console.WriteLine("Varázsló: Elnézést a kellemetlenségért");
+                        Thread.Sleep(2000);
+                        Console.WriteLine("Varázsló: kiengedlek a ketrecből");
+                        Thread.Sleep(2000);
+                        Console.WriteLine("Narrátor:A varázsló kiengedett téged");
+                    }
+
+                    Console.WriteLine("Varázsló: Tudom miért jöttél");
+                    Thread.Sleep(2000);
+                    Console.WriteLine("Narrátor: Persze, hogy tudja hisz már érdeklődött a kővel kapcsolatban a vendéglőben");
+                    Thread.Sleep(5000);
+                    Console.WriteLine("Varázsló: Nálad van a kövem és jöttél vissza adni nekem");
+                    Thread.Sleep(3000);
+                    Console.WriteLine("Varázsló: Ugye?(Igen/Nem)");
+                    Thread.Sleep(2000);
+
+                    string vissza_adod = Console.ReadLine().ToLower();
+
+                    while (true)
+                    {
+                        if(vissza_adod == "igen" && vissza_adod_neki == "igen")
+                        {
+                            Console.WriteLine("Narrátor: Betartottad a szavadat és vissza adtad neki a követ");
+                            Thread.Sleep(4000);
+                            Console.WriteLine("Narrátor: Jó döntés");
+                            break;
+                        }
+                        else if (vissza_adod == "igen" && vissza_adod_neki == "nem")
+                        {
+                            Console.WriteLine("Narrátor: Eredetileg azt mondtad, hogy nem adod oda");
+                            Thread.Sleep(3000);
+                            Console.WriteLine("Narrátor: De úgy látszik meggondoltad magad");
+                            Thread.Sleep(2000);
+                            Console.WriteLine("Narrátor: Helyesen cselekedtél");
+                            break;
+                        }
+                        else if (vissza_adod == "nem" && vissza_adod_neki == "igen")
+                        {
+                            Console.WriteLine("Narrátor: Eredetileg azt mondtad, hogy oda adod neki");
+                            Thread.Sleep(3000);
+                            Console.WriteLine("Narrátor: megszegted a szavad");
+                            Thread.Sleep(3000);
+                            Console.WriteLine("Narrátor: Ez nem szép dolog");
+                            Thread.Sleep(2000);
+                            break;
+                        }
+                        else if (vissza_adod == "nem" && vissza_adod_neki == "nem")
+                        {
+                            Console.WriteLine("Narrátor: Nem gondoltad meg magad");
+                            Thread.Sleep(2000);
+                            Console.WriteLine("Narrátor: Úgy gondolod hogy nálad jobb kezekben van egy kő");
+                            Thread.Sleep(3000);
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Varázsló: Nem igazán értettem");
+                            Thread.Sleep(2000);
+                            Console.WriteLine("Varázsló: Tudnál válaszolni arra, hogy oda adod-e a követ vagy sem");
+                            Thread.Sleep(2000);
+                            vissza_adod = Console.ReadLine().ToLower();
+                        }
+                    }
+
+                    if(vissza_adod == "nem")
+                    {
+
+                        Console.WriteLine("Varázsló: Rendben akkor tartsd meg magadnak");
+                        Thread.Sleep(3000);
+                        Console.WriteLine("Varázsló: Tessék itt egy varázsseprű és menj el amíg lehet");  
+                    }
+
+                    else if (vissza_adod == "igen")
+                    {
+                        Console.WriteLine("Varázsló: Köszönöm szépen a követ, ennek segítségével tudok egy főzetet keverni neked");
+                        Thread.Sleep(4000);
+                        Console.WriteLine("Varázsló: Ami megoldja a problémád");
+                        Thread.Sleep(3000);
+                        Console.WriteLine("Narrátor: A varázsló csinált egy főzetet és odaadta neked");
+                        Thread.Sleep(4000);
+                        Console.WriteLine("Narrátor: Megiszod a főzetet ?(Igen/Nem)");
+                        Thread.Sleep(2000);
+                        string megiszod_a_fozetet = Console.ReadLine().ToLower();
+
+                        while (true)
+                        {
+                            if(megiszod_a_fozetet == "igen")
+                            {
+                                Console.WriteLine($"Narrátor: {nev} megbízott a varázslóba és megitta a főzetet");
+                                break;
+                            }
+                            else if (megiszod_a_fozetet == "nem")
+                            {
+                                Console.WriteLine($"Narrátor: {nev} nem bízott meg a varázslóba és nem itta meg");
+                                Thread.Sleep(4000);
+                                Console.WriteLine($"Narrátor: Ebben a pillanatban pedig megszomjazott {nev}");
+                                Thread.Sleep(3000);
+                                Console.WriteLine("Narrátor: Viszont véletlen a víz helyett a főzetett ittad meg");
+                                break;
+
+
+                            }
+
+                            Console.WriteLine("Narrátor: Megismételnéd a választ");
+                            megiszod_a_fozetet = Console.ReadLine();
+
+                        }
+                        Thread.Sleep(3000);
+                        Console.WriteLine("Narrátor: Szerencsédre a főzettől vissza nyerted a beszéd képességedet");
+                        Thread.Sleep(4000);
+                        Console.WriteLine($"Narrátor: Gyerünk {nev} mondj valamit");
+
+                        string mondas = Console.ReadLine();
+
+                        if (mondas == "")
+                        {
+                            Console.WriteLine("Varázsló: Akkor ne mondj semmit");
+                            Thread.Sleep(3000);
+                            Console.WriteLine("Varázsló: Én tudom hogy te már tudsz beszélni");
+
+                        }
+                        else
+                        {
+                            Console.WriteLine($"{nev}: {mondas}");
+                            Thread.Sleep(5000);
+                            Console.WriteLine($"Narrátor: {nev}..");
+                            Thread.Sleep(5000);
+                            Console.WriteLine("Narrátor: Ez gyönyörű volt");
+                            Thread.Sleep(2000);
+                        }
+                        Console.WriteLine("Varázsló: Na ezzel meg is lennénk");
+                        Thread.Sleep(3000);
+                        Console.WriteLine("Varázsló: Most pedig válaszolj nekem pár találós kérdésre");
+                        Thread.Sleep(3000);
+                        Console.WriteLine("Varázsló: Hogy begyakorold a beszédet, és minden helyes válaszért kapsz aranyat");
+                        Thread.Sleep(4000);
+                        Console.WriteLine("Narrátor: Mi ez, valami legyen ön is milliomos utánzat?");
+                        Thread.Sleep(4000);
+                        Console.WriteLine("Varázsló: Pontosan olyan mint egy legyen ön is milliomos utánzat");
+                        Thread.Sleep(5000);
+                        Console.WriteLine("Varázsló: Első Kérdés");
+                        Thread.Sleep(3000);
+                        Console.WriteLine("Varázsló: Mikor fekszel, ő akkor kel, egyszer egész, máskor csak fél");
+                        Thread.Sleep(2000);
+
+                        Console.WriteLine("Varázsló: Mi az ?");
+
+                        int helyes_valasz = 2;
+                        string mi_az_1 = Console.ReadLine().ToLower(); 
+
+                        Console.WriteLine($"{nev}: {mi_az_1}");
+                        //első kérdés
+                        if (mi_az_1 == "a hold" && mi_az_1 == "hold")
+                        {
+                            Console.WriteLine("Varázsló: Így igaz a hold volt");
+                            Thread.Sleep(2000);
+                        }
+                        else if( i > 2)
+                        {
+                            Console.WriteLine($"Narrátor: Mivel {nev} inteligencia szintje megfelelő");
+                            Thread.Sleep(3000);
+                            Console.WriteLine($"Narrátor: Megtudta állapítani, hogy a válasz biztos,hogy nem {mi_az_1} lesz");
+                            Thread.Sleep(5000);
+                            Console.WriteLine("Narrátor: Hanem a hold");
+                            Thread.Sleep(2000);
+                            Console.WriteLine($"{nev}: A hold");
+                            Thread.Sleep(2000);
+                            Console.WriteLine("Varázsló: Így igaz a hold volt");
+                            Thread.Sleep(2000);
+
+                        }
+                        else if(se > 4)
+                        {
+                            Console.WriteLine("Narrátor: Nem épp erre a válaszra gondolt,de nembaj szerencséd van");
+                            Thread.Sleep(3000);
+                            Console.WriteLine($"Narrátor: Mivel este volt {nev} meglátta a holdat a barlang bejáratából");
+                            Thread.Sleep(5000);
+                            Console.WriteLine("Narrátor: Így már rájött, hogy a válasz a hold lesz");
+                            Thread.Sleep(3000);
+                            Console.WriteLine($"{nev}: A hold");
+                            Thread.Sleep(2000);
+                            Console.WriteLine("Varázsló: Így igaz a hold volt");
+                            Thread.Sleep(2000);
+                        }
+                        else
+                        {
+                            helyes_valasz--;
+                            Console.WriteLine("Varázsló: Nem találtad el");
+                            Thread.Sleep(3000);
+                            Console.WriteLine("Varázsló: A megoldás a hold volt");
+                            Thread.Sleep(2000);
+
+                        }
+
+                        //második kérdés
+                        Console.WriteLine("Varázsló: Második kérdés egyben az utolsó");
+                        Thread.Sleep(2000);
+                        Console.WriteLine("Varázsló: Mi az?");
+                        Thread.Sleep(2000);
+                        Console.WriteLine("Varázsló: Feldobom semmi leeseik semmi");
+
+                        string mi_az_2 = Console.ReadLine().ToLower();
+
+                        Console.WriteLine($"{nev}: {mondas}");
+
+                        if(mi_az_2 == "semmi" && mi_az_2 == "a semmi")
+                        {
+                            Console.WriteLine("Varázsló: Így igaz a semmi volt");
+                            Thread.Sleep(2000);
+                        }
+                        else if (i > 4)
+                        {
+                            Console.WriteLine($"Narrátor: Mivel {nev} inteligencia szintje megfelelő");
+                            Thread.Sleep(3000);
+                            Console.WriteLine($"Narrátor: Megtudta állapítani, hogy a válasz biztos,hogy nem {mi_az_2} lesz");
+                            Thread.Sleep(5000);
+                            Console.WriteLine("Narrátor: Hanem a semmi");
+                            Thread.Sleep(2000);
+                            Console.WriteLine($"{nev}: A semmi");
+                            Thread.Sleep(2000);
+                            Console.WriteLine("Varázsló: Így igaz a semmi volt");
+                            Thread.Sleep(2000);
+                        }
+                        else if(se > 6)
+                        {
+
+                            Console.WriteLine("Narrátor: Nem épp erre a válaszra gondolt,de nembaj szerencséd van");
+                            Thread.Sleep(3000);
+                            Console.WriteLine($"Narrátor: {nev} meglátta az üres főzetes palackját");
+                            Thread.Sleep(5000);
+                            Console.WriteLine("Narrátor: Így már rájött, hogy a válasz a semmi lesz");
+                            Thread.Sleep(3000);
+                            Console.WriteLine($"{nev}: A semmi");
+                            Thread.Sleep(2000);
+                            Console.WriteLine("Varázsló: Így igaz a semmi volt");
+                            Thread.Sleep(2000);
+
+                        }
+                        else
+                        {
+
+                            helyes_valasz--;
+                            Console.WriteLine("Varázsló: Nem találtad el");
+                            Thread.Sleep(3000);
+                            Console.WriteLine("Varázsló: A megoldás a semmi volt");
+                            Thread.Sleep(2000);
+
+                        }
+
+                        
+
+                        if(helyes_valasz  == 2)
+                        {
+                            Console.WriteLine("Varázsló: Na remek");
+                            Thread.Sleep(2000);
+                            Console.WriteLine("Varázsló: Minden kérdésre tudtál válaszolni így megkapod a jutalmad");
+                            Thread.Sleep(4000);
+                            Console.WriteLine("Varázsló: Ami 12000 arany lesz");
+
+                            penz = 12000;
+
+                            Thread.Sleep(2000);
+                            Console.WriteLine("Varázsló: A beszéd pedig hibátlanul megy");
+
+
+                        }
+                        else if (helyes_valasz == 1)
+                        {
+                            Console.WriteLine("Varázsló: Na remek");
+                            Thread.Sleep(2000);
+                            Console.WriteLine("Varázsló: Egy kérdésre tudtál válaszolni így a jutalmad felét megkaphatod");
+                            Thread.Sleep(4000);
+                            Console.WriteLine("Varázsló: Ami 6000 arany lesz");
+                            Thread.Sleep(2000);
+
+                            penz = 6000;
+
+                            Console.WriteLine("Varázsló: A beszéd pedig ment szerencsére");
+
+
+
+
+                        }
+                        else
+                        {
+                            Console.WriteLine("Varázsló: Na...");
+                            Thread.Sleep(2000);
+                            Console.WriteLine("Varázsló: Egy kérdésre sem válaszoltál jól");
+                            Thread.Sleep(3000);
+                            Console.WriteLine("Varázsló: Így nem kapod meg a jutalmat");
+                            Thread.Sleep(3000);
+                            Console.WriteLine("Varázsló: De legalább már tudsz beszélni");
+
+                        }
+
+                        if(penz == 12000) 
+                        {
+
+                            Console.WriteLine($"Narrátor: Így végződött {nev} napja");
+                            Thread.Sleep(3000);
+                            Console.WriteLine($"Narrátor: Most már tudsz beszéni és még {penz} aranyad is lett");
+                            Thread.Sleep(4000);
+                        
+                        }
+                        else if (penz == 6000) 
+                        {
+                            Console.WriteLine($"Narrátor: Így végződött {nev} napja");
+                            Thread.Sleep(3000);
+                            Console.WriteLine($"Narrátor: Most már tudsz beszéni és még {penz} aranyad is lett");
+                            Thread.Sleep(4000);
+                        }
+                        else 
+                        {
+                            Console.WriteLine($"Narrátor: Így végződött {nev} napja");
+                            Thread.Sleep(3000);
+                            Console.WriteLine($"Narrátor: Most már tudsz beszéni viszont 1 arany fityinged sincs");
+                            Thread.Sleep(4000);
+                        }
+
+                        Console.WriteLine("Narrátor: Élvezd ki beszéd képességedet");
+                        Thread.Sleep(3000);
+                        Console.WriteLine("Narrátor:Most pedig mondj egy utolsó mondatot");
+
+                        string utolso_mondat = Console.ReadLine();
+
+                        Console.WriteLine($"{nev}: gorjbgivkjepofloeőlgfrekigh");
+                        Thread.Sleep(5000);
+
+                        Console.WriteLine("Narrátor: Ezen majd még gyakoronod kell");
+                    } 
                 }
             }
             // 2-es szoba vége
@@ -484,49 +871,21 @@ namespace jatek
             // 7-ES SZOBA
             else if(kulcs == 7)
             {
-                Console.Clear();
-                Console.WriteLine($"Narrátor: {nev} bement a szobájába és talált az asztalán egy lapot amiben egy sárkányról volt szó");
+                Console.WriteLine("Vendéglátó: Upsz");
                 Thread.Sleep(2000);
-                Console.WriteLine("Narrátor: És ezt természetesen neked kell legyőznöd");
-                Thread.Sleep(2000);
-                Console.WriteLine($"Narrátor: Találtál a lap mellett egy pénzeszsákot amiben így ránézésre 1500 arany van segítek");
-                Thread.Sleep(2000);
-                Console.WriteLine($"Elveszed a pénz?(Igen/Nem)");
-                string elveszed_a_p = Console.ReadLine().ToLower();
-
-                while (true)
-
-                    if (elveszed_a_p == "igen")
-                    {
-                        penz = 1500;
-                        Console.WriteLine($"Narrátor: {nev} remekül döntött és elvette a pénzt,nem tudta kié,nem tudta honnan van, de az biztos, hogy már a tiéd");
-                        Thread.Sleep(2000);
-                        Console.WriteLine($"Jelenlegi aranyad {penz}");
-                        break;
-
-                    }
-                    else if (elveszed_a_p == "nem")
-                    {
-                        Console.WriteLine($"Narrátor: {nev} annyira becsületes,hogy nem veszi el a pénzt,vagy csak nem tudja hogy egy arany fillére sincs");
-                        Thread.Sleep(2000);
-                        Console.WriteLine("Narrátor: Az egyetlen dolga ami arany az a szíve");
-                        Thread.Sleep(2000);
-                        Console.WriteLine($"Narrátor: Jelenlegi aranyad {penz}");
-                        break;
-
-
-                    }
-                    else
-                    {
-                        Console.WriteLine($"Narrátor: {nev} ennyi pénzt életébe nem látott ezért sokkolt állapota miatt nem is tudott rendesen válaszolni");
-                        Thread.Sleep(2000);
-                        Console.WriteLine("Narrátor: Probáljuk meg mégegyszer");
-                        Thread.Sleep(2000);
-                        Console.WriteLine($"Elveszed a pénz?(Igen/Nem)");
-                        elveszed_a_p = Console.ReadLine().ToLower();
-                    }
+                Console.WriteLine("Vendéglátó: Ezt elfelejtettem mondani de a 7-es szoba nem jó");
+                Thread.Sleep(3000);
+                Console.WriteLine("Vendéglátó: Felújítás alatt van");
+                Thread.Sleep(3000);
+                Console.WriteLine("Vendéglátó: A gyorsaságot és a karizmát majd itt fogod tudni felhasználni");
+                Thread.Sleep(5000);
+                Console.WriteLine("Vendéglátó: Addig is indítsd újra a játékot és válassz egy másik szobát");
             }
             //7-es szoba vége 
+
+
+
+
 
 
 
@@ -623,7 +982,7 @@ namespace jatek
                 Console.WriteLine("Narrátor: Nem olyan nagy falu ez úgy látszik");
                 Thread.Sleep(1500);
 
-                //Ha rosszúl érezdet magad akkor segít neked a játék
+                //Ha rosszúl éreztet magad akkor segít neked a játék
                 if(rosszul_erzed_magad == "de" && e >= 4 || se >= 5)
                 {
                     if (e >= 8 || se >= 7)
@@ -865,7 +1224,4 @@ namespace jatek
             }
         }
     }
-
-
-
 }
